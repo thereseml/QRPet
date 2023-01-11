@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export function Layout() {
   return (
@@ -7,16 +7,25 @@ export function Layout() {
         <nav>
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Hem</Link>
             </li>
             <li>
-              <a href="/about">About</a>
+              <Link to="/about">Om QRPet</Link>
             </li>
             <li>
-              <a href="/howitwork">How it work</a>ß
+              <Link to="/howitwork">Hur det funkar</Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <Link to="/contact">Kontakt</Link>
+            </li>
+            <li>
+              <Link to="/register">Registrera</Link>
+            </li>
+            <li>
+              <Link to="/userlogin">Logga In</Link>
+            </li>
+            <li>
+              <Link to="/adminlogin">Admin</Link>
             </li>
           </ul>
         </nav>
