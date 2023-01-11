@@ -23,11 +23,11 @@ export function AdminLogin() {
         <form>
           <div>
             <label>Användarnamn:</label>
-            <input type="text" name="username" />
+            <input type="text" name="username" onChange={handleChange} />
           </div>
           <div>
             <label>Lösenord:</label>
-            <input type="password" name="password" />
+            <input type="password" name="password" onChange={handleChange} />
           </div>
           <button type="button" onChange={handleSubmit}>
             Logga in
