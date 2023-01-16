@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./components/home";
@@ -12,7 +11,9 @@ import { NotFound } from "./components/notfound";
 import { About } from "./components/about";
 import { HowItWork } from "./components/howitwork";
 import { Contact } from "./components/contact";
-import { Register } from "./components/registrer";
+import { RegisterUser } from "./components/registrerUser";
+import { RegisterSecondOwner } from "./components/RegisterSecondOwner";
+import { RegisterPets } from "./components/registerPets";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -27,7 +28,12 @@ root.render(
           <Route path="howitwork" element={<HowItWork />} />
           <Route path="contact" element={<Contact />} />
           <Route path="userlogin" element={<UserLogin />} />
-          <Route path="register" element={<Register />} />
+          <Route path="register" element={<RegisterUser />} />
+          <Route path="user/:id" element={<RegisterPets />} />
+          <Route
+            path="user/:id/secondowner"
+            element={<RegisterSecondOwner />}
+          />
 
           <Route path="adminlogin" element={<AdminLogin />} />
           <Route path="*" element={<NotFound />} />
