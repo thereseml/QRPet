@@ -1,6 +1,14 @@
-import React, { ChangeEvent, useState } from "react";
+import axios from "axios";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { IPets } from "./models/IPets";
-export function RegisterPets({}) {
+
+export function RegisterPets() {
+  // hämta id från url
+  const userId = useParams();
+  let ID = userId.id;
+
+  // state för att spara in data från formuläret
   const [newPet, setNewPet] = useState<IPets>({
     name: "",
     petType: "",
@@ -9,15 +17,34 @@ export function RegisterPets({}) {
     chipNr: 0,
     image: "",
     details: "",
+    ownerId: ID,
   });
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     let name = e.target.name;
     setNewPet({ ...newPet, [name]: e.target.value });
   }
-
   function handleSubmit() {
-    console.log("registrering!");
+    //headers att skicka med
+    const headers = {
+      "Content-Type": "application/json",
+    };
+
+    axios
+      .post("http://localhost:8000/pets/add", newPet, { headers })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setTimeout(() => {
+      console.log("Ditt djur är nu registrerat" + newPet.ownerId);
+
+      // skicka till nästa sida
+      // window.location.href = `http://localhost:3000/user/${ID}/secondowner`;
+    }, 3000);
   }
 
   return (
@@ -61,7 +88,7 @@ export function RegisterPets({}) {
         <div>
           <label>Färg:</label>
           <input
-            type="number"
+            type="text"
             name="color"
             onChange={handleChange}
             placeholder="Färg.."
@@ -89,7 +116,7 @@ export function RegisterPets({}) {
             placeholder="Överiga detaljer..."
           ></input>
         </div>
-        <button type="button" onChange={handleSubmit}>
+        <button type="button" onClick={handleSubmit}>
           Lägg till djur
         </button>
       </form>

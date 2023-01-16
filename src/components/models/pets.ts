@@ -6,6 +6,7 @@ export class Pets {
     public color: string,
     public image: string,
     public chipNr: number,
-    public details: string
+    public details: string,
+    public ownerId: string
   ) {}
 }

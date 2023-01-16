@@ -1,8 +1,9 @@
-import { ChangeEvent, useState } from "react";
+import axios from "axios";
+import { ChangeEvent, useEffect, useState } from "react";
 import { INewUser } from "./models/INewUser";
-import { RegisterPets } from "./registerPets";
 
-export function Register() {
+export function RegisterUser() {
+  // state för att spara in data från formuläret
   const [newUser, setNewUser] = useState<INewUser>({
     firstname: "",
     lastname: "",
@@ -19,12 +20,32 @@ export function Register() {
     setNewUser({ ...newUser, [name]: e.target.value });
   }
 
-  function handleSubmit() {
-    console.log("registrering!");
+  // funktion för att posta data och spara responset
+  async function postData() {
+    //headers att skicka med
+    const headers = {
+      "Content-Type": "application/json",
+    };
+
+    // posta data till backend
+    const response = await axios.post(
+      "http://localhost:8000/users/add",
+      newUser,
+      { headers }
+    );
+
+    // spara response/idt
+    const ID = response.data.id;
+    // skicka till nästa sida
+    window.location.href = `http://localhost:3000/user/${ID}`;
   }
 
+  // funktion för att hantera knappen registrera
   function handleRegister() {
-    console.log("registrering klar!");
+    //kalla på postfunction med timer
+    setTimeout(() => {
+      postData();
+    }, 3000);
   }
 
   return (
@@ -105,16 +126,11 @@ export function Register() {
               placeholder="Postnummer.."
             />
           </div>
-          <button type="button" onChange={handleSubmit}>
-            Lägg till ägare
+          <button type="button" onClick={handleRegister}>
+            Registrera
           </button>
         </form>
       </div>
-
-      <RegisterPets />
-      <button type="button" onChange={handleRegister}>
-        Klar med registrering
-      </button>
     </>
   );
 }

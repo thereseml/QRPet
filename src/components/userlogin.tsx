@@ -28,7 +28,7 @@ export function UserLogin() {
             <label>Lösenord:</label>
             <input type="password" name="password" onChange={handleChange} />
           </div>
-          <button type="button" onChange={handleSubmit}>
+          <button type="button" onClick={handleSubmit}>
             Logga in
           </button>
         </form>
