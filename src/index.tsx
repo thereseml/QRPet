@@ -14,6 +14,7 @@ import { Contact } from "./components/contact";
 import { RegisterUser } from "./components/registrerUser";
 import { RegisterSecondOwner } from "./components/RegisterSecondOwner";
 import { RegisterPets } from "./components/registerPets";
+import { LoggedInUser } from "./components/loggedinUser";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -27,13 +28,14 @@ root.render(
           <Route path="about" element={<About />} />
           <Route path="howitwork" element={<HowItWork />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="userlogin" element={<UserLogin />} />
           <Route path="register" element={<RegisterUser />} />
+          <Route path="userlogin" element={<UserLogin />} />
           <Route path="user/:id" element={<RegisterPets />} />
           <Route
             path="user/:id/secondowner"
             element={<RegisterSecondOwner />}
           />
+          <Route path="user/:id/userlogedin" element={<LoggedInUser />} />
 
           <Route path="adminlogin" element={<AdminLogin />} />
           <Route path="*" element={<NotFound />} />

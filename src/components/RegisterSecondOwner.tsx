@@ -1,6 +1,6 @@
+import axios from "axios";
 import React, { ChangeEvent, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IPets } from "./models/IPets";
 
 export function RegisterSecondOwner() {
   // hämta id från url
@@ -24,14 +24,30 @@ export function RegisterSecondOwner() {
   }
 
   function handleSubmit() {
-    setTimeout(() => {
-      console.log(
-        "Ditt extra ägare är nu registrerad" + newSecondOwner.ownerId
-      );
+    //headers att skicka med
+    const headers = {
+      "Content-Type": "application/json",
+    };
 
-      // skicka till nästa sida
-      // window.location.href = `http://localhost:3000/user/${ID}/secondowner`;
+    axios
+      .post("http://localhost:8000/secondOwner/add", newSecondOwner, {
+        headers,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setTimeout(() => {
+      console.log("Din extra ägare är nu registrerad");
     }, 3000);
+  }
+
+  function handleDone() {
+    // skicka till nästa sida
+    // window.location.href = `http://localhost:3000/user/${ID}/userlogin`;
   }
 
   return (
@@ -94,7 +110,9 @@ export function RegisterSecondOwner() {
         <button type="button" onClick={handleSubmit}>
           Lägg till ägare
         </button>
-        <button type="button">Klar</button>
+        <button type="button" onClick={handleDone}>
+          Klar
+        </button>
       </form>
     </div>
   );
