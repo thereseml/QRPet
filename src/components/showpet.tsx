@@ -3,28 +3,15 @@ import { useState } from "react";
 import { IPetsId } from "./models/IPetsId";
 
 export function ShowPet(props: IPetsId) {
-  const [propsPet, setPropsPet] = useState<IPetsId>({
-    name: props.name,
-    image: props.image,
-    petType: props.petType,
-    breed: props.breed,
-    color: props.color,
-    chipNr: props.chipNr,
-    details: props.details,
-    ownerId: props.ownerId,
-    _id: props._id,
-  });
-
+  // funktion för att ta bort ett djur
   function handleDelete() {
-    setPropsPet(props);
-
     setTimeout(() => {
       deletePet();
     }, 500);
   }
 
+  // ta bort ett djur
   function deletePet() {
-    // ta bort ett djur
     axios
       .delete(`http://localhost:8000/pets/${props._id}`)
       .then((res) => {

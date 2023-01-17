@@ -23,7 +23,8 @@ export function RegisterSecondOwner() {
     setNewSecondOwner({ ...newSecondOwner, [name]: e.target.value });
   }
 
-  function handleSubmit() {
+  function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
     //headers att skicka med
     const headers = {
       "Content-Type": "application/json",
@@ -42,7 +43,8 @@ export function RegisterSecondOwner() {
 
     setTimeout(() => {
       console.log("Din extra ägare är nu registrerad");
-    }, 3000);
+      event.target.reset();
+    }, 1000);
   }
 
   function handleDone() {
@@ -52,7 +54,7 @@ export function RegisterSecondOwner() {
 
   return (
     <div>
-      <form className="newPetForm">
+      <form className="newPetForm" onSubmit={handleSubmit}>
         <div>
           <label>Förnamn:</label>
           <input
@@ -107,9 +109,7 @@ export function RegisterSecondOwner() {
             placeholder="Postnummer.."
           />
         </div>
-        <button type="button" onClick={handleSubmit}>
-          Lägg till ägare
-        </button>
+        <button type="submit">Lägg till ägare</button>
         <button type="button" onClick={handleDone}>
           Klar
         </button>

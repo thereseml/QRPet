@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 export function Layout() {
   return (
     <>
-      <header>
+      <header className="">
         <nav>
           <ul>
             <li>
