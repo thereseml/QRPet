@@ -41,10 +41,12 @@ export function RegisterUser() {
   }
 
   // funktion för att hantera knappen registrera
-  function handleRegister() {
+  function handleRegister(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
     //kalla på postfunction med timer
     setTimeout(() => {
       postData();
+      event.target.reset();
     }, 3000);
   }
 
@@ -53,7 +55,7 @@ export function RegisterUser() {
       <h3>Registrera dig & dina djur!</h3>
 
       <div>
-        <form className="newUserForm">
+        <form className="newUserForm" onSubmit={handleRegister}>
           <div>
             <label>Förnamn:</label>
             <input
@@ -126,9 +128,7 @@ export function RegisterUser() {
               placeholder="Postnummer.."
             />
           </div>
-          <button type="button" onClick={handleRegister}>
-            Registrera
-          </button>
+          <button type="submit">Registrera</button>
         </form>
       </div>
     </>

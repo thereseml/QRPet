@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IPets } from "./models/IPets";
 import { IPetsId } from "./models/IPetsId";
@@ -29,7 +29,8 @@ export function RegisterPets() {
     let name = e.target.name;
     setNewPet({ ...newPet, [name]: e.target.value });
   }
-  function handleSubmit() {
+  function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
     //headers att skicka med
     const headers = {
       "Content-Type": "application/json",
@@ -48,9 +49,11 @@ export function RegisterPets() {
     setTimeout(() => {
       console.log("Ditt djur är nu registrerat!");
       getRegisteredPets();
+      event.target.reset();
     }, 1000);
   }
 
+  // hämtar djur när sidan laddas om/öppnas
   useEffect(() => {
     getRegisteredPets();
   }, []);
@@ -79,7 +82,7 @@ export function RegisterPets() {
 
   return (
     <div>
-      <form className="newPetForm">
+      <form className="newPetForm" onSubmit={handleSubmit}>
         <div>
           <label>Namn:</label>
           <input
@@ -146,11 +149,8 @@ export function RegisterPets() {
             placeholder="Överiga detaljer..."
           ></input>
         </div>
-        <button type="button" onClick={handleSubmit}>
-          Lägg till djur
-        </button>
+        <button type="submit">Lägg till djur</button>
         <button type="button" onClick={handleDone}>
-          {" "}
           Klar
         </button>
       </form>

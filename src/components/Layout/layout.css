@@ -1,0 +1,56 @@
+.topHeader {
+  height: 100px;
+  outline: 1px solid green;
+  margin: 0px;
+}
+.topHeader ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.topHeader ul li {
+  float: left;
+  margin: 0 1rem;
+}
+.topHeader a {
+  text-decoration: none;
+  color: #000;
+}
+.topHeader a:hover {
+  font-weight: 700;
+}
+
+.lightBtn {
+  border: 1px solid #695853;
+  border-radius: 18px;
+  background-color: #fff;
+}
+.lightBtn a {
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #695853;
+  padding: 5px 10px;
+}
+.lightBtn:hover {
+  background-color: #e7ded9;
+}
+
+.darkBtn {
+  border: none;
+  border-radius: 18px;
+  background-color: #695853;
+}
+.darkBtn a {
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e7ded9;
+  padding: 5px 10px;
+}
+.darkBtn:hover {
+  background-color: #e7ded9;
+  color: #695853;
+}/*# sourceMappingURL=layout.css.map */

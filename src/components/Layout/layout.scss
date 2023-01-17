@@ -1,0 +1,71 @@
+// Primary colors
+$darkGreen: #13292a;
+$lightBeige: #e7ded9;
+$mediumBrown: #695853;
+
+// Secondary colors
+$rostBrown: #8f6152;
+$myBlack: #000;
+$myWhite: #fff;
+
+.topHeader {
+  height: 100px;
+  outline: 1px solid green;
+  margin: 0px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      float: left;
+      margin: 0 1rem;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $myBlack;
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}
+
+.lightBtn {
+  border: 1px solid $mediumBrown;
+  border-radius: 18px;
+  background-color: $myWhite;
+
+  a {
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $mediumBrown;
+    padding: 5px 10px;
+  }
+
+  &:hover {
+    background-color: $lightBeige;
+  }
+}
+
+.darkBtn {
+  border: none;
+  border-radius: 18px;
+  background-color: $mediumBrown;
+
+  a {
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $lightBeige;
+    padding: 5px 10px;
+  }
+  &:hover {
+    background-color: $lightBeige;
+    color: $mediumBrown;
+  }
+}
