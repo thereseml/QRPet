@@ -4,7 +4,7 @@ import "normalize.css";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home } from "./components/home";
+import { Home } from "./components/Home/home";
 import { UserLogin } from "./components/userlogin";
 import { AdminLogin } from "./components/adminlogin";
 import { Layout } from "./components/Layout/layout";

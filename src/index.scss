@@ -1,8 +1,119 @@
 @import "normalize.css";
 
+// Primary colors
+$darkGreen: #13292a;
+$lightBeige: #e7ded9;
+$mediumBrown: #695853;
+
+// Secondary colors
+$rostBrown: #8f6152;
+$myBlack: #000;
+$myWhite: #fff;
+
+// Heading Desktop
+
+h1 {
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  font-size: 64px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 48px;
+}
+
+h3 {
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 36px;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 32px;
+}
+
+h6,
+p {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+// mörk knapp
+.darkBtn {
+  border: none;
+  border-radius: 18px;
+  background-color: $mediumBrown;
+
+  a {
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $lightBeige;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-align: center;
+  }
+  &:hover {
+    background-color: $lightBeige;
+    color: $mediumBrown;
+    border: 1px solid $mediumBrown;
+  }
+}
+
+// ljust knapp
+.lightBtn {
+  border: 1px solid $mediumBrown;
+  border-radius: 18px;
+  background-color: $myWhite;
+
+  a {
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $mediumBrown;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  &:hover {
+    background-color: $lightBeige;
+  }
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+  // Heading Tablet & Mobile
+
+  h1 {
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 12px;
+  }
 }

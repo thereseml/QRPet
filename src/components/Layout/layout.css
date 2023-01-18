@@ -1,56 +1,80 @@
+@import "index.css";
 .topHeader {
   height: 100px;
-  outline: 1px solid green;
+  border-bottom: 0.5px solid rgba(102, 102, 102, 0.5);
   margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.topHeader ul {
+.topHeader .QRLogo {
+  width: 80px;
+}
+.topHeader .desktopNav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.topHeader ul li {
+.topHeader .desktopNav ul li {
   float: left;
   margin: 0 1rem;
 }
-.topHeader a {
+.topHeader .desktopNav ul li a {
   text-decoration: none;
   color: #000;
 }
-.topHeader a:hover {
+.topHeader .desktopNav ul li a:hover {
   font-weight: 700;
 }
-
-.lightBtn {
+.topHeader .topHeaderRight .lightBtn {
   border: 1px solid #695853;
   border-radius: 18px;
   background-color: #fff;
 }
-.lightBtn a {
+.topHeader .topHeaderRight .lightBtn a {
   font-weight: 700;
   line-height: 29px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #695853;
   padding: 5px 10px;
+  text-decoration: none;
 }
-.lightBtn:hover {
+.topHeader .topHeaderRight .lightBtn:hover {
   background-color: #e7ded9;
 }
-
-.darkBtn {
+.topHeader .topHeaderRight .darkBtn {
   border: none;
   border-radius: 18px;
   background-color: #695853;
 }
-.darkBtn a {
+.topHeader .topHeaderRight .darkBtn a {
   font-weight: 700;
   line-height: 29px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #e7ded9;
   padding: 5px 10px;
+  text-decoration: none;
 }
-.darkBtn:hover {
+.topHeader .topHeaderRight .darkBtn:hover {
   background-color: #e7ded9;
   color: #695853;
+  border: 1px solid #695853;
+}
+
+@media screen and (max-width: 768px) {
+  .topHeader {
+    height: 50px;
+  }
+  .topHeaderLeft .QRLogo {
+    width: 50px;
+  }
+  .desktopNav {
+    display: none;
+  }
+  .topHeaderRight {
+    display: none;
+  }
 }/*# sourceMappingURL=layout.css.map */

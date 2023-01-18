@@ -94,4 +94,70 @@ body {
   h5 {
     font-size: 12px;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home .homeText {
+  margin: 20px;
+}
+.home .homeImg .CatDogImg {
+  width: 100vw;
+}
+.home .UserStats {
+  width: 100vw;
+  height: 65px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #13292a;
+}
+.home .UserStats h3 {
+  margin: 0px;
+}
+.home .UserStats .statOne {
+  margin: 10px;
+}
+.home .UserStats .statOne h2 {
+  margin: 0px;
+}
+.home .UserStats .statTwo {
+  margin: 10px;
+}
+.home .UserStats .statTwo h2 {
+  margin: 0px;
+}
+.home .UserStats hr {
+  width: 1px;
+  height: 45px;
+  border: 0px;
+  background-color: #666;
+  margin: 0px;
+}
+.home .siteInfo h1 {
+  margin: 20px;
+}
+.home .siteInfo .sidebysideHome {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.home .siteInfo .sidebysideHome p {
+  font-size: 12px;
+  padding-right: 20px;
+  text-align: center;
+}
+.home .siteInfo .phoneImg {
+  width: 50vw;
+}
+.home .siteInfo hr {
+  width: 100%;
+  height: 1px;
+  color: #666;
+  margin: -4px 0px 0px 0px;
+}/*# sourceMappingURL=home.css.map */

@@ -14,10 +14,10 @@ export default (props) => {
       <a className="menu-item" href="/howitwork">
         Hur det funkar
       </a>
-      <a className="menu-item" href="/contakt">
+      <a className="menu-item" href="/contact">
         Kontakt
       </a>
-      <a className="menu-item" href="/login">
+      <a className="menu-item" href="/userlogin">
         Logga in
       </a>
       <a className="menu-item" href="/register">
