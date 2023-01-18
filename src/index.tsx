@@ -12,9 +12,9 @@ import { NotFound } from "./components/notfound";
 import { About } from "./components/about";
 import { HowItWork } from "./components/howitwork";
 import { Contact } from "./components/contact";
-import { RegisterUser } from "./components/registrerUser";
-import { RegisterSecondOwner } from "./components/RegisterSecondOwner";
-import { RegisterPets } from "./components/registerPets";
+import { RegisterUser } from "./components/Registration/registrerUser";
+import { RegisterSecondOwner } from "./components/Registration/RegisterSecondOwner";
+import { RegisterPets } from "./components/Registration/registerPets";
 import { LoggedInUser } from "./components/loggedinUser";
 
 const root = ReactDOM.createRoot(

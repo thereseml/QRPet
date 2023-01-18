@@ -1,7 +1,10 @@
 import "./home.scss";
 import CatDogCat from "../../img/CatDogCat.png";
-import { FaPaw, FaUserAlt } from "react-icons/fa";
+import { FaPaw, FaUserAlt, FaDog, FaUserFriends, FaCat } from "react-icons/fa";
 import phoneSite from "../../img/PhoneSite.png";
+import dogQR from "../../img/dogQR.png";
+import { HiDocumentAdd } from "react-icons/hi";
+import { HiQrCode } from "react-icons/hi2";
 
 export function Home() {
   return (
@@ -52,6 +55,54 @@ export function Home() {
             </p>
           </div>
           <hr />
+        </div>
+        <div className="aboutDiv">
+          <div className="stepOne">
+            <FaUserFriends fontSize="50px" />
+            <FaDog fontSize="50px" />
+            <FaCat fontSize="50px" />
+            <div className="aboutDivText">
+              <h3>1</h3>
+              <p>
+                Pellentesque facilisis enim id bibendum cursus. Morbi sem massa,
+                consequat quis lacinia vel, gravida a sapien.
+              </p>
+            </div>
+          </div>
+          <div className="stepTwo">
+            <HiDocumentAdd fontSize="80px" />
+            <div className="aboutDivText">
+              <h3>2</h3>
+              <p>
+                Aenean vulputate, eros sit amet auctor condimentum, sapien arcu
+                sollicitudin elit, sit amet vehicula turpis augue nec elit.
+              </p>
+            </div>
+          </div>
+          <div className="stepThree">
+            <HiQrCode fontSize="80px" />
+            <div className="aboutDivText">
+              <h3>3</h3>
+              <p>
+                Phasellus consequat leo at dignissim porta. Nullam pharetra
+                efficitur dictum.
+              </p>
+            </div>
+          </div>
+          <div className="stepFour">
+            <div className="aboutDivText">
+              <h3>4</h3>
+              <p>
+                Suspendisse id elementum ex, eget sollicitudin ipsum. Nam felis
+                neque, ornare nec lacinia sit amet, scelerisque quis justo.
+              </p>
+            </div>
+            <img
+              src={dogQR}
+              className="dogQR"
+              alt="Dog whit QR code in collar"
+            />
+          </div>
         </div>
       </div>
     </>

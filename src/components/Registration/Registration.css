@@ -94,4 +94,41 @@ body {
   h5 {
     font-size: 12px;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+h3 {
+  text-align: center;
+}
+
+.newUserForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px;
+}
+.newUserForm .formDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+label {
+  font-family: "Noto Serif", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 10px;
+}
+
+input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 90vw;
+  border: 1px solid #695853;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-style: italic;
+}/*# sourceMappingURL=Registration.css.map */

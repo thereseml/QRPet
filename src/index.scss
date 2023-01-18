@@ -61,7 +61,7 @@ p {
     text-decoration: none;
     text-align: center;
   }
-  &:hover {
+  .darkBtn:hover {
     background-color: $lightBeige;
     color: $mediumBrown;
     border: 1px solid $mediumBrown;

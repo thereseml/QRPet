@@ -4,13 +4,17 @@ import Sidebar from "./sidebar";
 import QRLogo from "../../img/QRPetLogo.png";
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
 
+function handleImg() {
+  window.location.href = "/";
+}
+
 export function Layout() {
   return (
     <>
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
       <header className="topHeader">
         <div className="topHeaderLeft">
-          <img src={QRLogo} className="QRLogo"></img>
+          <img src={QRLogo} className="QRLogo" onClick={handleImg}></img>
         </div>
         <div className="topHeaderCenter">
           <nav className="desktopNav">
