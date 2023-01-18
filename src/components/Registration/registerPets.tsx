@@ -1,9 +1,9 @@
 import axios from "axios";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IPets } from "./models/IPets";
-import { IPetsId } from "./models/IPetsId";
-import { ShowPet } from "./showpet";
+import { IPets } from "../models/IPets";
+import { IPetsId } from "../models/IPetsId";
+import { ShowPet } from "../showpet";
 
 export function RegisterPets() {
   // hämta id från url

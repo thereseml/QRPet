@@ -4,7 +4,7 @@ import "normalize.css";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home } from "./components/home";
+import { Home } from "./components/Home/home";
 import { UserLogin } from "./components/userlogin";
 import { AdminLogin } from "./components/adminlogin";
 import { Layout } from "./components/Layout/layout";
@@ -12,9 +12,9 @@ import { NotFound } from "./components/notfound";
 import { About } from "./components/about";
 import { HowItWork } from "./components/howitwork";
 import { Contact } from "./components/contact";
-import { RegisterUser } from "./components/registrerUser";
-import { RegisterSecondOwner } from "./components/RegisterSecondOwner";
-import { RegisterPets } from "./components/registerPets";
+import { RegisterUser } from "./components/Registration/registrerUser";
+import { RegisterSecondOwner } from "./components/Registration/RegisterSecondOwner";
+import { RegisterPets } from "./components/Registration/registerPets";
 import { LoggedInUser } from "./components/loggedinUser";
 
 const root = ReactDOM.createRoot(

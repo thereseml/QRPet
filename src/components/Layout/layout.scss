@@ -1,71 +1,86 @@
-// Primary colors
-$darkGreen: #13292a;
-$lightBeige: #e7ded9;
-$mediumBrown: #695853;
-
-// Secondary colors
-$rostBrown: #8f6152;
-$myBlack: #000;
-$myWhite: #fff;
+@import "/src/index.scss";
 
 .topHeader {
   height: 100px;
-  outline: 1px solid green;
+  border-bottom: 0.5px solid rgba(102, 102, 102, 0.5);
   margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li {
-      float: left;
-      margin: 0 1rem;
-    }
+  .QRLogo {
+    width: 80px;
   }
-  a {
-    text-decoration: none;
-    color: $myBlack;
 
-    &:hover {
-      font-weight: 700;
+  .desktopNav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        float: left;
+        margin: 0 1rem;
+
+        a {
+          text-decoration: none;
+          color: $myBlack;
+
+          &:hover {
+            font-weight: 700;
+          }
+        }
+      }
     }
   }
 }
 
-.lightBtn {
-  border: 1px solid $mediumBrown;
-  border-radius: 18px;
-  background-color: $myWhite;
+.footerOne {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $lightBeige;
 
-  a {
-    font-weight: 700;
-    line-height: 29px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: $mediumBrown;
-    padding: 5px 10px;
+  p {
+    font-size: 12px;
   }
 
-  &:hover {
-    background-color: $lightBeige;
+  .footerLeft {
+    margin: 10px;
+  }
+
+  .footerRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  button {
+    width: 100px;
+    height: auto;
+    a {
+      letter-spacing: 1px;
+      font-size: 10px;
+    }
   }
 }
 
-.darkBtn {
-  border: none;
-  border-radius: 18px;
-  background-color: $mediumBrown;
-
-  a {
-    font-weight: 700;
-    line-height: 29px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: $lightBeige;
-    padding: 5px 10px;
+@media screen and (max-width: 768px) {
+  .topHeader {
+    height: 50px;
   }
-  &:hover {
-    background-color: $lightBeige;
-    color: $mediumBrown;
+  .topHeaderLeft {
+    .QRLogo {
+      width: 50px;
+    }
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .topHeaderRight {
+    display: none;
   }
 }

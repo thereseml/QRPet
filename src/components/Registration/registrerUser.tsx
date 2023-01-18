@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
-import { INewUser } from "./models/INewUser";
+import { INewUser } from "../models/INewUser";
+import "../Registration/Registration.scss";
 
 export function RegisterUser() {
   // state för att spara in data från formuläret
@@ -56,7 +57,7 @@ export function RegisterUser() {
 
       <div>
         <form className="newUserForm" onSubmit={handleRegister}>
-          <div>
+          <div className="formDiv">
             <label>Förnamn:</label>
             <input
               type="text"
@@ -65,7 +66,7 @@ export function RegisterUser() {
               placeholder="Förnamn.."
             />
           </div>
-          <div>
+          <div className="formDiv">
             <label>Efternamn:</label>
             <input
               type="text"
@@ -74,7 +75,7 @@ export function RegisterUser() {
               placeholder="Efternamn.."
             />
           </div>
-          <div>
+          <div className="formDiv">
             <label>E-post:</label>
             <input
               type="e-mail"
@@ -83,7 +84,7 @@ export function RegisterUser() {
               placeholder="E-post.."
             />
           </div>
-          <div>
+          <div className="formDiv">
             <label>Lösenord</label>
             <input
               type="password"
@@ -92,7 +93,7 @@ export function RegisterUser() {
               placeholder="Lösenord.."
             />
           </div>
-          <div>
+          <div className="formDiv">
             <label>Telefon:</label>
             <input
               type="number"
@@ -101,7 +102,7 @@ export function RegisterUser() {
               placeholder="Telefon.."
             />
           </div>
-          <div>
+          <div className="formDiv">
             <label>Adress:</label>
             <input
               type="text"
@@ -110,7 +111,7 @@ export function RegisterUser() {
               placeholder="Adress.."
             />
           </div>
-          <div>
+          <div className="formDiv">
             <label>Stad:</label>
             <input
               type="text"
@@ -119,7 +120,7 @@ export function RegisterUser() {
               placeholder="Stad.."
             />
           </div>
-          <div>
+          <div className="formDiv">
             <label>Postnummer:</label>
             <input
               type="number"
@@ -128,7 +129,9 @@ export function RegisterUser() {
               placeholder="Postnummer.."
             />
           </div>
-          <button type="submit">Registrera</button>
+          <button type="submit" className="darkBtn">
+            Registrera
+          </button>
         </form>
       </div>
     </>

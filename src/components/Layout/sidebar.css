@@ -1,15 +1,16 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
+  position: absolute;
   width: 36px;
   height: 30px;
-  right: 36px;
-  top: 36px;
+  right: 10px;
+  top: 10px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: #373a47;
+  border-radius: 5px;
 }
 
 /* Color/shape of burger icon bars on hover*/
@@ -34,7 +35,8 @@
   */
 .bm-menu-wrap {
   position: fixed;
-  height: auto;
+  height: 50vh;
+  width: 100vw;
 }
 
 /* General sidebar styles */
@@ -78,4 +80,10 @@
 
 .bm-item:hover {
   font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .bm-burger-button {
+    display: none;
+  }
 }

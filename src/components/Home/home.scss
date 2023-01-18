@@ -1,0 +1,148 @@
+@import "../../index.scss";
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .homeText {
+    margin: 20px;
+  }
+
+  .homeImg {
+    .CatDogImg {
+      width: 100vw;
+    }
+  }
+
+  .UserStats {
+    width: 100vw;
+    height: 65px;
+    color: $myWhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $darkGreen;
+
+    h3 {
+      margin: 0px;
+    }
+
+    .statOne {
+      margin: 10px;
+
+      h2 {
+        margin: 0px;
+      }
+    }
+
+    .statTwo {
+      margin: 10px;
+      h2 {
+        margin: 0px;
+      }
+    }
+
+    hr {
+      width: 1px;
+      height: 45px;
+      border: 0px;
+      background-color: #666;
+      margin: 0px;
+    }
+  }
+
+  .siteInfo {
+    h1 {
+      margin: 20px;
+    }
+    .sidebysideHome {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      p {
+        font-size: 12px;
+        padding-right: 20px;
+        text-align: center;
+      }
+    }
+    .phoneImg {
+      width: 50vw;
+    }
+
+    hr {
+      width: 100%;
+      height: 1px;
+      color: #666;
+      margin: -4px 0px 0px 0px;
+    }
+  }
+
+  .aboutDiv {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    .stepOne {
+      width: 40%;
+      margin: 10px;
+    }
+
+    .stepTwo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 40%;
+      margin: 10px;
+    }
+
+    .stepThree {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 20px 0px 0px 30px;
+
+      .aboutDivText {
+        margin-left: 20px;
+        width: 50%;
+      }
+    }
+
+    .stepFour {
+      width: 100%;
+      margin: 0px 0px 0px 20px;
+      display: flex;
+      align-items: flex-end;
+
+      .aboutDivText {
+        width: 50%;
+        margin-bottom: 10px;
+      }
+    }
+
+    p {
+      font-size: 12px;
+      margin: 0 5px;
+    }
+
+    .aboutDivText {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+
+    .dogQR {
+      width: 60vw;
+      height: 100%;
+      float: right;
+    }
+  }
+}
