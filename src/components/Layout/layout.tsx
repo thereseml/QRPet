@@ -31,18 +31,15 @@ export function Layout() {
               <li>
                 <Link to="/contact">Kontakt</Link>
               </li>
-              <li>
-                <Link to="/adminlogin">Admin</Link>
-              </li>
             </ul>
           </nav>
         </div>
         <div className="topHeaderRight">
-          <button className="lightBtn">
+          <button>
             <Link to="/userlogin">Logga In</Link>
           </button>
 
-          <button className="darkBtn">
+          <button>
             <Link to="/register">Registrera</Link>
           </button>
         </div>
@@ -54,14 +51,14 @@ export function Layout() {
         <div className="footerLeft">
           <p>info@qrpet.se</p>
           <p>0701 234 567</p>
-          <button className="lightBtn">
+          <button>
             <Link to="/userlogin">Logga In</Link>
           </button>
         </div>
         <div className="footerCenter">
           <p>Väljvägen 1</p>
           <p>123 45 Mamlö</p>
-          <button className="darkBtn">
+          <button>
             <Link to="/register">Registrera</Link>
           </button>
         </div>

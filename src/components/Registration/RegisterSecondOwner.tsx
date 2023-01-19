@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { ChangeEvent, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./Registration.scss";
 
 export function RegisterSecondOwner() {
   // hämta id från url

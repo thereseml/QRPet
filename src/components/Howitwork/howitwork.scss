@@ -1,0 +1,100 @@
+@import "../../index.scss";
+
+.aboutDiv {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  .stepOne {
+    width: 40%;
+    margin: 10px;
+  }
+
+  .stepTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 40%;
+    margin: 10px;
+  }
+
+  .stepThree {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0px 0px 30px;
+
+    .aboutDivText {
+      margin-left: 20px;
+      width: 50%;
+    }
+  }
+
+  .stepFour {
+    width: 100%;
+    margin: 0px 0px 0px 20px;
+    display: flex;
+    align-items: flex-end;
+
+    .aboutDivText {
+      width: 50%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .aboutDivText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .dogQR {
+    width: 60vw;
+    height: 100%;
+    float: right;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .aboutDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .stepOne,
+    .stepTwo,
+    .stepThree,
+    .stepFour {
+      display: flex;
+      flex-direction: row;
+      width: 80%;
+      margin: 20px;
+
+      svg {
+        margin: 10px;
+      }
+    }
+    .aboutDivText {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .LogosDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    h3 {
+      margin: 15px;
+    }
+  }
+}

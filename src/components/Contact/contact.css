@@ -41,7 +41,6 @@ button {
   padding: 5px 10px;
   border-radius: 10px;
   border: 1px solid #695853;
-  margin: 5px;
 }
 button a {
   text-decoration: none;
@@ -63,6 +62,25 @@ body {
   font-weight: 400;
 }
 
+@media screen and (max-width: 768px) {
+  h1 {
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  h5 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
 label {
   font-family: "Noto Serif", serif;
   text-transform: uppercase;
@@ -83,35 +101,33 @@ input {
   font-style: italic;
 }
 
-@media screen and (min-width: 720px) {
-  label {
-    font-size: 20px;
-  }
-  input {
-    height: 50px;
-    font-size: 18px;
-  }
-  button {
-    font-size: 18px;
-    padding: 10px 20px;
-  }
+.contact .contactInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
-@media screen and (max-width: 720px) {
-  h1 {
-    font-family: "Noto Serif", serif;
-    font-weight: 400;
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 15px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-  h5 {
-    font-size: 12px;
-  }
-  p {
-    font-size: 12px;
-  }
-}/*# sourceMappingURL=index.css.map */
+.contact .contactInfoForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px;
+}
+.contact .contactInfoForm .formDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+.contact .contactInfoForm .formDiv textarea {
+  outline: 0;
+  background: #f2f2f2;
+  width: 90vw;
+  border: 1px solid #695853;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-style: italic;
+}/*# sourceMappingURL=contact.css.map */
