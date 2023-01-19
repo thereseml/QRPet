@@ -32,44 +32,27 @@ p {
   font-size: 20px;
 }
 
-.darkBtn {
-  border: none;
-  border-radius: 18px;
+button {
+  color: #695853;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #695853;
+}
+button a {
+  text-decoration: none;
+  color: #695853;
+}
+button a:hover {
   background-color: #695853;
+  color: #fff;
 }
-.darkBtn a {
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #e7ded9;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-align: center;
-}
-.darkBtn .darkBtn:hover {
-  background-color: #e7ded9;
-  color: #695853;
-  border: 1px solid #695853;
-}
-
-.lightBtn {
-  border: 1px solid #695853;
-  border-radius: 18px;
-  background-color: #fff;
-}
-.lightBtn a {
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #695853;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-align: center;
-}
-.lightBtn:hover {
-  background-color: #e7ded9;
+button:hover {
+  background-color: #695853;
+  color: #fff;
 }
 
 body {
@@ -95,24 +78,6 @@ body {
     font-size: 12px;
   }
 }
-h3 {
-  text-align: center;
-}
-
-.newUserForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 10px;
-}
-.newUserForm .formDiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 10px;
-}
-
 label {
   font-family: "Noto Serif", serif;
   text-transform: uppercase;
@@ -131,4 +96,22 @@ input {
   box-sizing: border-box;
   font-size: 12px;
   font-style: italic;
+}
+
+h3 {
+  text-align: center;
+}
+
+.newUserForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px;
+}
+.newUserForm .formDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
 }/*# sourceMappingURL=Registration.css.map */

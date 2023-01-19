@@ -63,6 +63,25 @@ body {
   font-weight: 400;
 }
 
+@media screen and (max-width: 720px) {
+  h1 {
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  h5 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
 label {
   font-family: "Noto Serif", serif;
   text-transform: uppercase;
@@ -83,35 +102,15 @@ input {
   font-style: italic;
 }
 
-@media screen and (min-width: 720px) {
-  label {
-    font-size: 20px;
-  }
-  input {
-    height: 50px;
-    font-size: 18px;
-  }
-  button {
-    font-size: 18px;
-    padding: 10px 20px;
-  }
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-@media screen and (max-width: 720px) {
-  h1 {
-    font-family: "Noto Serif", serif;
-    font-weight: 400;
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 15px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-  h5 {
-    font-size: 12px;
-  }
-  p {
-    font-size: 12px;
-  }
-}/*# sourceMappingURL=index.css.map */
+.loginForm .formDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}/*# sourceMappingURL=login.css.map */

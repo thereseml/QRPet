@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
 import { INewUser } from "../models/INewUser";
-import "../Registration/Registration.scss";
+import "./Registration.scss";
 
 export function RegisterUser() {
   // state för att spara in data från formuläret
@@ -129,9 +129,7 @@ export function RegisterUser() {
               placeholder="Postnummer.."
             />
           </div>
-          <button type="submit" className="darkBtn">
-            Registrera
-          </button>
+          <button type="submit">Registrera</button>
         </form>
       </div>
     </>

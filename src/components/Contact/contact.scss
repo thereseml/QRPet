@@ -1,0 +1,36 @@
+@import "../../index.scss";
+
+.contact {
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  .contactInfoForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px;
+
+    .formDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 10px;
+
+      textarea {
+        outline: 0;
+        background: #f2f2f2;
+        width: 90vw;
+        border: 1px solid $mediumBrown;
+        padding: 5px;
+        box-sizing: border-box;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+  }
+}

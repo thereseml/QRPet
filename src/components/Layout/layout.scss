@@ -42,10 +42,6 @@
   align-items: center;
   background-color: $lightBeige;
 
-  p {
-    font-size: 12px;
-  }
-
   .footerLeft {
     margin: 10px;
   }
@@ -66,7 +62,45 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+// desktop och tablet
+@media screen and (min-width: 720px) {
+  .topHeaderLeft {
+    width: 25%;
+  }
+  .topHeaderCenter {
+    width: 70%;
+  }
+
+  .topHeaderRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    height: auto;
+  }
+}
+
+// desktop
+@media screen and (min-width: 720px) {
+  .topHeader {
+    button {
+      font-size: 12px;
+    }
+  }
+  .footerOne {
+    button {
+      padding: 10px;
+      width: auto;
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// mobile
+@media screen and (max-width: 720px) {
   .topHeader {
     height: 50px;
   }

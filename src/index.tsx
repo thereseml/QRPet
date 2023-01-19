@@ -5,17 +5,17 @@ import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./components/Home/home";
-import { UserLogin } from "./components/userlogin";
-import { AdminLogin } from "./components/adminlogin";
+import { UserLogin } from "./components/Login/userlogin";
 import { Layout } from "./components/Layout/layout";
 import { NotFound } from "./components/notfound";
-import { About } from "./components/about";
-import { HowItWork } from "./components/howitwork";
-import { Contact } from "./components/contact";
+import { About } from "./components/About/about";
+import { Howitwork } from "./components/Howitwork/howitwork";
+import { Contact } from "./components/Contact/contact";
 import { RegisterUser } from "./components/Registration/registrerUser";
 import { RegisterSecondOwner } from "./components/Registration/RegisterSecondOwner";
 import { RegisterPets } from "./components/Registration/registerPets";
 import { LoggedInUser } from "./components/loggedinUser";
+import { AdminLogin } from "./components/Login/adminlogin";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -27,7 +27,7 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route index path="/" element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="howitwork" element={<HowItWork />} />
+          <Route path="howitwork" element={<Howitwork />} />
           <Route path="contact" element={<Contact />} />
           <Route path="register" element={<RegisterUser />} />
           <Route path="userlogin" element={<UserLogin />} />
