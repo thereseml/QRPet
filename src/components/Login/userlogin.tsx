@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ChangeEvent, useState } from "react";
 import "./login.scss";
 
@@ -13,7 +14,16 @@ export function UserLogin() {
   }
 
   function handleSubmit() {
+    Login();
     console.log("loggain!");
+  }
+
+  function Login() {
+    axios.post("http://localhost:8000/users/login", loginUser).then((res) => {
+      console.log(res);
+      // skicka till nästa sida
+      //   window.location.href = `http://localhost:3000/user/${ID}`;
+    });
   }
 
   return (
