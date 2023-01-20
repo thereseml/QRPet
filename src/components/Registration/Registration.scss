@@ -4,17 +4,65 @@ h3 {
   text-align: center;
 }
 
-.newUserForm {
+.newUserForm,
+.newPetForm,
+.secondOwnerForm {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 20px 10px;
 
   .formDiv {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: 10px;
+  }
+}
+
+.formDivType {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+
+  .RadioInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    width: 200px;
+
+    label {
+      font-size: 12px;
+    }
+    input {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+.allPets,
+.allSecondOwners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+
+  .tableDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 90vw;
+
+    h4 {
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      width: 180px;
+      margin: 0px;
+    }
   }
 }

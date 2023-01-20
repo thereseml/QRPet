@@ -3,7 +3,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IPets } from "../models/IPets";
 import { IPetsId } from "../models/IPetsId";
-import { ShowPet } from "../showpet";
+import { ShowPet } from "../ShowPetAndOwner/showpet";
 import "./Registration.scss";
 
 export function RegisterPets() {
@@ -68,6 +68,8 @@ export function RegisterPets() {
         console.log(res.data);
       });
   }
+
+  // skapar lista för alla registrerade djur
   let showAllPets = allpets.map((pet) => {
     return (
       <>
@@ -83,8 +85,9 @@ export function RegisterPets() {
 
   return (
     <div>
+      <h3>Registrera dina djur!</h3>
       <form className="newPetForm" onSubmit={handleSubmit}>
-        <div>
+        <div className="formDiv">
           <label>Namn:</label>
           <input
             type="text"
@@ -93,24 +96,26 @@ export function RegisterPets() {
             placeholder="Namn.."
           />
         </div>
-        <div>
+        <div className="formDivType">
           <label>Djurtyp:</label>
-          <input
-            type="radio"
-            name="petType"
-            onChange={handleChange}
-            value="Hund"
-          />
-          <label>Hund</label>
-          <input
-            type="radio"
-            name="petType"
-            onChange={handleChange}
-            value="Katt"
-          />
-          <label>Katt</label>
+          <div className="RadioInput">
+            <input
+              type="radio"
+              name="petType"
+              onChange={handleChange}
+              value="Hund"
+            />
+            <label>Hund</label>
+            <input
+              type="radio"
+              name="petType"
+              onChange={handleChange}
+              value="Katt"
+            />
+            <label>Katt</label>
+          </div>
         </div>
-        <div>
+        <div className="formDiv">
           <label>Ras:</label>
           <input
             type="text"
@@ -119,7 +124,7 @@ export function RegisterPets() {
             placeholder="Ras.."
           />
         </div>
-        <div>
+        <div className="formDiv">
           <label>Färg:</label>
           <input
             type="text"
@@ -128,7 +133,7 @@ export function RegisterPets() {
             placeholder="Färg.."
           />
         </div>
-        <div>
+        <div className="formDiv">
           <label>Chip Nummer:</label>
           <input
             type="number"
@@ -137,11 +142,11 @@ export function RegisterPets() {
             placeholder="Chip nummer.."
           ></input>
         </div>
-        <div>
+        <div className="formDiv">
           <label>Bild:</label>
           <input type="file" name="image" onChange={handleChange} />
         </div>
-        <div>
+        <div className="formDiv">
           <label>Övriga detaljer:</label>
           <input
             type="text"
@@ -157,7 +162,16 @@ export function RegisterPets() {
       </form>
 
       <div className="allPets">
-        <h2>Registrerade djur</h2>
+        <h3>Registrerade djur</h3>
+        <div className="tableDiv">
+          <h4>Namn</h4>
+          <h4>Djurtyp</h4>
+          <h4>Ras</h4>
+          <h4>Färg</h4>
+          <h4>Chip nummer</h4>
+          <h4>Övriga detaljer</h4>
+          <h4>Ta bort</h4>
+        </div>
         {showAllPets}
       </div>
     </div>

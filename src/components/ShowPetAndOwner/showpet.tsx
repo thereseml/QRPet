@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useState } from "react";
-import { IPetsId } from "./models/IPetsId";
+import { IPetsId } from "../models/IPetsId";
+import "./showpet.scss";
 
 export function ShowPet(props: IPetsId) {
   // funktion för att ta bort ett djur
@@ -30,13 +30,12 @@ export function ShowPet(props: IPetsId) {
   return (
     <>
       <div className="petsDiv" key={props._id}>
-        <h2>{props.name}</h2>
+        <p className="pName">{props.name}</p>
         <p>{props.petType}</p>
         <p>{props.breed}</p>
         <p>{props.color}</p>
         <p>{props.chipNr}</p>
         <p>{props.details}</p>
-        <p>{props._id}</p>
         <button type="button" onClick={handleDelete}>
           Ta bort
         </button>

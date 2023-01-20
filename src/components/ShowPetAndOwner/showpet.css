@@ -115,68 +115,23 @@ input {
     font-size: 12px;
   }
 }
-h3 {
-  text-align: center;
-}
-
-.newUserForm,
-.newPetForm,
-.secondOwnerForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 10px;
-}
-.newUserForm .formDiv,
-.newPetForm .formDiv,
-.secondOwnerForm .formDiv {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-}
-
-.formDivType {
-  display: flex;
-  flex-direction: column;
+.petsDiv,
+.secondOwnerDiv {
   width: 90vw;
-}
-.formDivType .RadioInput {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px;
-  width: 200px;
-}
-.formDivType .RadioInput label {
-  font-size: 12px;
-}
-.formDivType .RadioInput input {
-  height: 20px;
-  width: 20px;
-}
-
-.allPets,
-.allSecondOwners {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-}
-.allPets .tableDiv,
-.allSecondOwners .tableDiv {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 90vw;
+  height: 100px;
 }
-.allPets .tableDiv h4,
-.allSecondOwners .tableDiv h4 {
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.petsDiv .pName,
+.secondOwnerDiv .pName {
+  font-size: 18px;
   font-weight: 700;
-  width: 180px;
+}
+.petsDiv p,
+.secondOwnerDiv p {
+  font-size: 15px;
   margin: 0px;
-}/*# sourceMappingURL=Registration.css.map */
+  width: 180px;
+}/*# sourceMappingURL=showpet.css.map */

@@ -1,6 +1,8 @@
 import axios from "axios";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ISecOwn } from "../models/ISecOwn";
+import { ShowSecondOwner } from "../ShowPetAndOwner/showSecondOwner";
 import "./Registration.scss";
 
 export function RegisterSecondOwner() {
@@ -18,6 +20,9 @@ export function RegisterSecondOwner() {
     zip: 0,
     ownerId: ID,
   });
+
+  // spara alla secondOwners
+  const [allSecondOwners, setAllSecondOwners] = useState<ISecOwn[]>([]);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     let name = e.target.name;
@@ -44,9 +49,33 @@ export function RegisterSecondOwner() {
 
     setTimeout(() => {
       console.log("Din extra ägare är nu registrerad");
+      getRegisteredSecondOwner();
       event.target.reset();
     }, 1000);
   }
+
+  //hämta registrerade second Owners i lista
+  useEffect(() => {
+    getRegisteredSecondOwner();
+  }, []);
+
+  // hämta registrerade second owners
+  function getRegisteredSecondOwner() {
+    axios
+      .get<ISecOwn[]>(`http://localhost:8000/secondOwner/owner/${ID}`)
+      .then((res) => {
+        setAllSecondOwners(res.data);
+      });
+  }
+
+  // skapar lista för alla second owners
+  let showAllSecondOwners = allSecondOwners.map((secondOwner) => {
+    return (
+      <>
+        <ShowSecondOwner {...secondOwner} />
+      </>
+    );
+  });
 
   function handleDone() {
     // skicka till nästa sida
@@ -55,8 +84,8 @@ export function RegisterSecondOwner() {
 
   return (
     <div>
-      <form className="newPetForm" onSubmit={handleSubmit}>
-        <div>
+      <form className="secondOwnerForm" onSubmit={handleSubmit}>
+        <div className="formDiv">
           <label>Förnamn:</label>
           <input
             type="text"
@@ -65,7 +94,7 @@ export function RegisterSecondOwner() {
             placeholder="Förnamn.."
           />
         </div>
-        <div>
+        <div className="formDiv">
           <label>Efternamn:</label>
           <input
             type="text"
@@ -74,7 +103,7 @@ export function RegisterSecondOwner() {
             placeholder="Efternamn.."
           />
         </div>
-        <div>
+        <div className="formDiv">
           <label>Telefon:</label>
           <input
             type="number"
@@ -83,7 +112,7 @@ export function RegisterSecondOwner() {
             placeholder="Telefon.."
           />
         </div>
-        <div>
+        <div className="formDiv">
           <label>Adress:</label>
           <input
             type="text"
@@ -92,7 +121,7 @@ export function RegisterSecondOwner() {
             placeholder="Adress.."
           ></input>
         </div>
-        <div>
+        <div className="formDiv">
           <label>Stad:</label>
           <input
             type="text"
@@ -101,7 +130,7 @@ export function RegisterSecondOwner() {
             placeholder="Stad.."
           />
         </div>
-        <div>
+        <div className="formDiv">
           <label>Postnummer:</label>
           <input
             type="number"
@@ -115,6 +144,19 @@ export function RegisterSecondOwner() {
           Klar
         </button>
       </form>
+
+      <div className="allSecondOwners">
+        <h3>Registrerade extra ägare</h3>
+        <div className="tableDiv">
+          <h4>Namn</h4>
+          <h4>Telefon</h4>
+          <h4>Adress</h4>
+          <h4>Stad</h4>
+          <h4>Postnummer</h4>
+          <h4>Ta bort</h4>
+        </div>
+        {showAllSecondOwners}
+      </div>
     </div>
   );
 }
