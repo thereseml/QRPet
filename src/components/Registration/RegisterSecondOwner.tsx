@@ -31,7 +31,6 @@ export function RegisterSecondOwner() {
   }
 
   function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
-    event.preventDefault();
     //headers att skicka med
     const headers = {
       "Content-Type": "application/json",

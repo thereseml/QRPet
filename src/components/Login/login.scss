@@ -1,5 +1,8 @@
 @import "../../index.scss";
 
+.loginDiv {
+  height: 70vh;
+}
 .loginForm {
   display: flex;
   flex-direction: column;
@@ -11,5 +14,32 @@
     flex-direction: column;
     justify-content: center;
     margin: 10px;
+  }
+}
+
+.LoggedinDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .UpperDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80vw;
+  }
+  .OwnerDiv {
+    width: 30vw;
+  }
+
+  .QRDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+
+    canvas {
+      margin: 10px;
+    }
   }
 }

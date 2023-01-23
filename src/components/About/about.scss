@@ -45,3 +45,24 @@
     }
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .siteInfo {
+    h1 {
+      position: absolute;
+      left: 35%;
+      margin-top: 100px;
+    }
+    .sidebysideHome {
+      justify-content: space-between;
+      align-items: center;
+      .phoneImg {
+        width: 35vw;
+      }
+    }
+    hr {
+      width: 100vw;
+      margin-left: -20px;
+    }
+  }
+}

@@ -31,7 +31,6 @@ export function RegisterPets() {
     setNewPet({ ...newPet, [name]: e.target.value });
   }
   function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
-    event.preventDefault();
     //headers att skicka med
     const headers = {
       "Content-Type": "application/json",

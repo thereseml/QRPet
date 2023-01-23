@@ -66,23 +66,23 @@
 @media screen and (min-width: 720px) {
   .topHeaderLeft {
     width: 25%;
+    margin-left: 20px;
   }
   .topHeaderCenter {
-    width: 70%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
   }
 
   .topHeaderRight {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     width: 20%;
     height: auto;
   }
-}
 
-// desktop
-@media screen and (min-width: 720px) {
   .topHeader {
     button {
       font-size: 12px;

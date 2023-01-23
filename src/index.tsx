@@ -14,8 +14,9 @@ import { Contact } from "./components/Contact/contact";
 import { RegisterUser } from "./components/Registration/registrerUser";
 import { RegisterSecondOwner } from "./components/Registration/RegisterSecondOwner";
 import { RegisterPets } from "./components/Registration/registerPets";
-import { LoggedInUser } from "./components/loggedinUser";
+import { LoggedInUser } from "./components/Login/loggedinUser";
 import { AdminLogin } from "./components/Login/adminlogin";
+import { QRInfo } from "./components/QRInfo/QRInfo";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -39,6 +40,7 @@ root.render(
           <Route path="user/:id/userlogedin" element={<LoggedInUser />} />
 
           <Route path="adminlogin" element={<AdminLogin />} />
+          <Route path="QrInfo/:id" element={<QRInfo />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
