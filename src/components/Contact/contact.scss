@@ -34,3 +34,25 @@
     }
   }
 }
+
+// desktop
+@media screen and (min-width: 1024px) {
+  .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+
+    .contactInfo {
+      width: 40vw;
+    }
+    .contactInfoForm {
+      .formDiv {
+        textarea {
+          width: 40vw;
+        }
+      }
+    }
+  }
+}

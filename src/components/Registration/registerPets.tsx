@@ -17,8 +17,6 @@ export function RegisterPets() {
     petType: "",
     breed: "",
     color: "",
-    chipNr: 0,
-    image: "",
     details: "",
     ownerId: ID,
   });
@@ -124,19 +122,6 @@ export function RegisterPets() {
           />
         </div>
         <div className="formDiv">
-          <label>Chip Nummer:</label>
-          <input
-            type="number"
-            name="chipNr"
-            onChange={handleChange}
-            placeholder="Chip nummer.."
-          ></input>
-        </div>
-        <div className="formDiv">
-          <label>Bild:</label>
-          <input type="file" name="image" onChange={handleChange} />
-        </div>
-        <div className="formDiv">
           <label>Övriga detaljer:</label>
           <input
             type="text"
@@ -158,7 +143,6 @@ export function RegisterPets() {
           <h4>Djurtyp</h4>
           <h4>Ras</h4>
           <h4>Färg</h4>
-          <h4>Chip nummer</h4>
           <h4>Övriga detaljer</h4>
           <h4>Ta bort</h4>
         </div>

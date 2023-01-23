@@ -35,13 +35,13 @@ export function Layout() {
           </nav>
         </div>
         <div className="topHeaderRight">
-          <button>
-            <Link to="/userlogin">Logga In</Link>
-          </button>
+          <Link className="Btn" to="/userlogin">
+            Logga In
+          </Link>
 
-          <button>
-            <Link to="/register">Registrera</Link>
-          </button>
+          <Link className="Btn" to="/register">
+            Registrera
+          </Link>
         </div>
       </header>
       <main>
@@ -51,16 +51,16 @@ export function Layout() {
         <div className="footerLeft">
           <p>info@qrpet.se</p>
           <p>0701 234 567</p>
-          <button>
-            <Link to="/userlogin">Logga In</Link>
-          </button>
+          <Link className="Btn" to="/userlogin">
+            Logga In
+          </Link>
         </div>
         <div className="footerCenter">
           <p>Väljvägen 1</p>
           <p>123 45 Mamlö</p>
-          <button>
-            <Link to="/register">Registrera</Link>
-          </button>
+          <Link className="Btn" to="/register">
+            Registrera
+          </Link>
         </div>
         <div className="footerRight">
           <FaInstagram fontSize="50px" />

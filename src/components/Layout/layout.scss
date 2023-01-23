@@ -62,7 +62,7 @@
   }
 }
 
-// desktop och tablet
+// tablet
 @media screen and (min-width: 720px) {
   .topHeaderLeft {
     width: 25%;
@@ -76,11 +76,15 @@
 
   .topHeaderRight {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 20%;
     height: auto;
+    margin: 5px;
+    .Btn {
+      margin: 5px;
+    }
   }
 
   .topHeader {
@@ -116,5 +120,12 @@
 
   .topHeaderRight {
     display: none;
+  }
+}
+
+// desktop
+@media screen and (min-width: 1024px) {
+  .topHeaderRight {
+    flex-direction: row;
   }
 }

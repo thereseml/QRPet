@@ -21,7 +21,8 @@ h3 {
 
 .formDivType {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   width: 90vw;
 
   .RadioInput {
@@ -64,5 +65,11 @@ h3 {
       width: 180px;
       margin: 0px;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .formDivType {
+    width: 40vw;
   }
 }
