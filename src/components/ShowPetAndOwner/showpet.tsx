@@ -34,7 +34,6 @@ export function ShowPet(props: IPetsId) {
         <p>{props.petType}</p>
         <p>{props.breed}</p>
         <p>{props.color}</p>
-        <p>{props.chipNr}</p>
         <p>{props.details}</p>
         <button type="button" onClick={handleDelete}>
           Ta bort

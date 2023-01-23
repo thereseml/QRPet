@@ -54,7 +54,6 @@ export function QRInfo() {
                 <p>{pet.breed}</p>
                 <p>{pet.color}</p>
                 <p>{pet.details}</p>
-                <p>{pet.image}</p>
               </>
             );
           })}

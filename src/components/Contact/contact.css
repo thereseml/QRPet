@@ -116,6 +116,11 @@ input {
     font-size: 12px;
   }
 }
+@media screen and (min-width: 1024px) {
+  input {
+    width: 40vw;
+  }
+}
 .contact .contactInfo {
   display: flex;
   flex-direction: column;
@@ -145,4 +150,20 @@ input {
   box-sizing: border-box;
   font-size: 12px;
   font-style: italic;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+  }
+  .contact .contactInfo {
+    width: 40vw;
+  }
+  .contact .contactInfoForm .formDiv textarea {
+    width: 40vw;
+  }
 }/*# sourceMappingURL=contact.css.map */
