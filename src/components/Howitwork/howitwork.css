@@ -63,25 +63,6 @@ body {
   font-weight: 400;
 }
 
-@media screen and (max-width: 720px) {
-  h1 {
-    font-family: "Noto Serif", serif;
-    font-weight: 400;
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 15px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-  h5 {
-    font-size: 12px;
-  }
-  p {
-    font-size: 12px;
-  }
-}
 label {
   font-family: "Noto Serif", serif;
   text-transform: uppercase;
@@ -102,6 +83,38 @@ input {
   font-style: italic;
 }
 
+@media screen and (min-width: 720px) {
+  label {
+    font-size: 20px;
+  }
+  input {
+    height: 50px;
+    font-size: 18px;
+  }
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 720px) {
+  h1 {
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
 .aboutDiv {
   position: relative;
   display: flex;
@@ -188,5 +201,48 @@ input {
   }
   .aboutDiv h3 {
     margin: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .aboutDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    margin-bottom: -20px;
+  }
+  .aboutDiv .stepOne,
+.aboutDiv .stepTwo,
+.aboutDiv .stepThree,
+.aboutDiv .stepFour {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    margin: 20px;
+  }
+  .aboutDiv .stepOne svg,
+.aboutDiv .stepTwo svg,
+.aboutDiv .stepThree svg,
+.aboutDiv .stepFour svg {
+    margin: 10px;
+  }
+  .aboutDiv .aboutDivText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .aboutDiv .LogosDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .aboutDiv h3 {
+    margin: 15px;
+  }
+  .aboutDiv .dogQR {
+    width: 30vw;
+    float: right;
   }
 }/*# sourceMappingURL=howitwork.css.map */

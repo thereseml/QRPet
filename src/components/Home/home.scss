@@ -72,3 +72,25 @@
     }
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .home {
+    .homeHero {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 90vw;
+
+      .homeText {
+        width: 50vw;
+      }
+
+      .homeImg {
+        .CatDogImg {
+          width: 35vw;
+        }
+      }
+    }
+  }
+}

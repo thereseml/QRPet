@@ -98,3 +98,48 @@
     }
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .aboutDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    margin-bottom: -20px;
+
+    .stepOne,
+    .stepTwo,
+    .stepThree,
+    .stepFour {
+      display: flex;
+      flex-direction: row;
+      width: 40%;
+      margin: 20px;
+
+      svg {
+        margin: 10px;
+      }
+    }
+    .aboutDivText {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .LogosDiv {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    h3 {
+      margin: 15px;
+    }
+    .dogQR {
+      width: 30vw;
+      float: right;
+    }
+  }
+}

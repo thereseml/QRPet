@@ -41,6 +41,7 @@ button {
   padding: 5px 10px;
   border-radius: 10px;
   border: 1px solid #695853;
+  margin: 5px;
 }
 button a {
   text-decoration: none;
@@ -60,27 +61,9 @@ body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
-@media screen and (max-width: 768px) {
-  h1 {
-    font-family: "Noto Serif", serif;
-    font-weight: 400;
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 15px;
-  }
-  h3 {
-    font-size: 16px;
-  }
-  h5 {
-    font-size: 12px;
-  }
-  p {
-    font-size: 12px;
-  }
-}
 label {
   font-family: "Noto Serif", serif;
   text-transform: uppercase;
@@ -101,6 +84,38 @@ input {
   font-style: italic;
 }
 
+@media screen and (min-width: 720px) {
+  label {
+    font-size: 20px;
+  }
+  input {
+    height: 50px;
+    font-size: 18px;
+  }
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 720px) {
+  h1 {
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
 .contact .contactInfo {
   display: flex;
   flex-direction: column;

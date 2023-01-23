@@ -32,7 +32,7 @@ export function Contact() {
             <label>Meddelande:</label>
             <textarea placeholder="Meddelande.." />
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Skicka!</button>
         </form>
       </div>
     </>

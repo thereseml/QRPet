@@ -63,25 +63,6 @@ body {
   font-weight: 400;
 }
 
-@media screen and (max-width: 720px) {
-  h1 {
-    font-family: "Noto Serif", serif;
-    font-weight: 400;
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 15px;
-  }
-  h3 {
-    font-size: 16px;
-  }
-  h5 {
-    font-size: 12px;
-  }
-  p {
-    font-size: 12px;
-  }
-}
 label {
   font-family: "Noto Serif", serif;
   text-transform: uppercase;
@@ -102,6 +83,38 @@ input {
   font-style: italic;
 }
 
+@media screen and (min-width: 720px) {
+  label {
+    font-size: 20px;
+  }
+  input {
+    height: 50px;
+    font-size: 18px;
+  }
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 720px) {
+  h1 {
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
 .siteInfo h1 {
   margin: 20px;
 }
@@ -139,5 +152,23 @@ input {
   .siteInfo hr {
     width: 100vw;
     margin: 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .siteInfo h1 {
+    position: absolute;
+    left: 35%;
+    margin-top: 100px;
+  }
+  .siteInfo .sidebysideHome {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .siteInfo .sidebysideHome .phoneImg {
+    width: 35vw;
+  }
+  .siteInfo hr {
+    width: 100vw;
+    margin-left: -20px;
   }
 }/*# sourceMappingURL=about.css.map */
