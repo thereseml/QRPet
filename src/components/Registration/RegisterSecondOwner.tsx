@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { GetSecOwn } from "../functions/getSecOwn";
 import { ISecOwn } from "../models/ISecOwn";
 import { ShowSecondOwner } from "../ShowPetAndOwner/showSecondOwner";
 import "./Registration.scss";
@@ -68,18 +69,9 @@ export function RegisterSecondOwner() {
       });
   }
 
-  // skapar lista för alla second owners
-  let showAllSecondOwners = allSecondOwners.map((secondOwner) => {
-    return (
-      <>
-        <ShowSecondOwner {...secondOwner} />
-      </>
-    );
-  });
-
   function handleDone() {
     // skicka till nästa sida
-    // window.location.href = `http://localhost:3000/user/${ID}/userlogin`;
+    window.location.href = `http://localhost:3000/user/${ID}/userlogedin`;
   }
 
   return (
@@ -155,7 +147,7 @@ export function RegisterSecondOwner() {
           <h4>Postnummer</h4>
           <h4>Ta bort</h4>
         </div>
-        {showAllSecondOwners}
+        <GetSecOwn />
       </div>
     </div>
   );

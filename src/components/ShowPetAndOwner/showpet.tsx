@@ -29,7 +29,7 @@ export function ShowPet(props: IPetsId) {
 
   return (
     <>
-      <div className="petsDiv" key={props._id}>
+      <li className="petsDiv">
         <p className="pName">{props.name}</p>
         <p>{props.petType}</p>
         <p>{props.breed}</p>
@@ -39,7 +39,7 @@ export function ShowPet(props: IPetsId) {
         <button type="button" onClick={handleDelete}>
           Ta bort
         </button>
-      </div>
+      </li>
     </>
   );
 }
