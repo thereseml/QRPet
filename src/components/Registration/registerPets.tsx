@@ -1,9 +1,9 @@
 import axios from "axios";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { GetPetById } from "../functions/getPetbyId";
 import { IPets } from "../models/IPets";
 import { IPetsId } from "../models/IPetsId";
-import { ShowPet } from "../ShowPetAndOwner/showpet";
 import "./Registration.scss";
 
 export function RegisterPets() {
@@ -68,15 +68,6 @@ export function RegisterPets() {
         console.log(res.data);
       });
   }
-
-  // skapar lista för alla registrerade djur
-  let showAllPets = allpets.map((pet) => {
-    return (
-      <>
-        <ShowPet {...pet} />
-      </>
-    );
-  });
 
   function handleDone() {
     // skicka till nästa sida
@@ -172,7 +163,7 @@ export function RegisterPets() {
           <h4>Övriga detaljer</h4>
           <h4>Ta bort</h4>
         </div>
-        {showAllPets}
+        <GetPetById />
       </div>
     </div>
   );
