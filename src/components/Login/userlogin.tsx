@@ -24,8 +24,12 @@ export function UserLogin() {
   function Login() {
     axios.post(`${url}users/login`, loginUser).then((res) => {
       console.log(res);
+      const ID = res.data.id;
+
+      localStorage.setItem("OwnerID", JSON.stringify(ID));
+
       // skicka till nästa sida
-      //   window.location.href = `${url}user/${ID}`;
+      window.location.href = `/user/${ID}/userlogedin`;
     });
   }
 

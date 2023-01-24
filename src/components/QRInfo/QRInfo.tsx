@@ -10,6 +10,9 @@ export function QRInfo() {
   const userId = useParams();
   let ID = userId.id;
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   // spara hämtade kontaktuppgifter ägaren
   const [user, setUser] = useState<INewUser>();
 
@@ -20,25 +23,21 @@ export function QRInfo() {
   const [allpets, setAllPets] = useState<IPetsId[]>([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/users/${ID}`).then((res) => {
+    axios.get(`${url}/users/${ID}`).then((res) => {
       console.log(res);
       setUser(res.data);
     });
 
     // hämta registrerade andra ägare
-    axios
-      .get<ISecOwn[]>(`http://localhost:8000/secondOwner/owner/${ID}`)
-      .then((res) => {
-        setAllSecondOwners(res.data);
-        console.log(res.data);
-      });
+    axios.get<ISecOwn[]>(`${url}/secondOwner/owner/${ID}`).then((res) => {
+      setAllSecondOwners(res.data);
+      console.log(res.data);
+    });
 
-    axios
-      .get<IPetsId[]>(`http://localhost:8000/pets/owner/${ID}`)
-      .then((res) => {
-        setAllPets([...res.data]);
-        console.log(res.data);
-      });
+    axios.get<IPetsId[]>(`${url}/pets/owner/${ID}`).then((res) => {
+      setAllPets([...res.data]);
+      console.log(res.data);
+    });
   }, []);
 
   return (

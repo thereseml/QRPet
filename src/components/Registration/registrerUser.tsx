@@ -35,9 +35,9 @@ export function RegisterUser() {
     const response = await axios.post(`${url}users/add`, newUser, { headers });
 
     // spara response/idt
-    const ID = response.data.id;
+    const ID = await response.data.id;
     // skicka till nästa sida
-    window.location.href = `${url}user/${ID}`;
+    window.location.href = `/user/${ID}`;
   }
 
   // funktion för att hantera knappen registrera
