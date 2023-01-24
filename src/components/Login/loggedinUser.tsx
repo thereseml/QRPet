@@ -54,7 +54,7 @@ export function LoggedInUser() {
           <div className="QRDiv">
             <h5>Din QR Kod:</h5>
             <QRCodeCanvas
-              value={`${window.location.hostname}/QrInfo/${ID}`}
+              value={`www.${window.location.hostname}/QrInfo/${ID}`}
               size={200}
               bgColor={"#ffffff"}
               fgColor={"#000000"}
