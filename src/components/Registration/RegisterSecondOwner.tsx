@@ -33,6 +33,7 @@ export function RegisterSecondOwner() {
   }
 
   function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
     //headers att skicka med
     const headers = {
       "Content-Type": "application/json",
@@ -53,13 +54,9 @@ export function RegisterSecondOwner() {
       console.log("Din extra ägare är nu registrerad");
       getRegisteredSecondOwner();
       event.target.reset();
+      window.location.reload();
     }, 1000);
   }
-
-  //hämta registrerade second Owners i lista
-  useEffect(() => {
-    getRegisteredSecondOwner();
-  }, []);
 
   // hämta registrerade second owners
   function getRegisteredSecondOwner() {
@@ -69,8 +66,10 @@ export function RegisterSecondOwner() {
   }
 
   function handleDone() {
+    localStorage.setItem("OwnerID", JSON.stringify(ID));
+
     // skicka till nästa sida
-    window.location.href = `${url}user/${ID}/userlogedin`;
+    window.location.href = `/user/${ID}/userlogedin`;
   }
 
   return (
@@ -131,9 +130,6 @@ export function RegisterSecondOwner() {
           />
         </div>
         <button type="submit">Lägg till ägare</button>
-        <button type="button" onClick={handleDone}>
-          Klar
-        </button>
       </form>
 
       <div className="allSecondOwners">
@@ -147,6 +143,11 @@ export function RegisterSecondOwner() {
           <h4>Ta bort</h4>
         </div>
         <GetSecOwn />
+      </div>
+      <div className="doneButton">
+        <button type="button" onClick={handleDone}>
+          Klar
+        </button>
       </div>
     </div>
   );

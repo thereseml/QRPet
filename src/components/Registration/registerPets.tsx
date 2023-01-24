@@ -31,12 +31,13 @@ export function RegisterPets() {
     let name = e.target.name;
     setNewPet({ ...newPet, [name]: e.target.value });
   }
+
   function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
     //headers att skicka med
     const headers = {
       "Content-Type": "application/json",
     };
-
     // posta data till backend
     axios
       .post(`${url}pets/add`, newPet, { headers })
@@ -51,25 +52,20 @@ export function RegisterPets() {
       console.log("Ditt djur är nu registrerat!");
       getRegisteredPets();
       event.target.reset();
+      window.location.reload();
     }, 1000);
   }
 
-  // hämtar djur när sidan laddas om/öppnas
-  useEffect(() => {
-    getRegisteredPets();
-  }, []);
-
   // hämta registrerade djur i lista
-  function getRegisteredPets() {
-    axios.get<IPetsId[]>(`${url}pets/owner/${ID}`).then((res) => {
+  async function getRegisteredPets() {
+    await axios.get<IPetsId[]>(`${url}pets/owner/${ID}`).then((res) => {
       setAllPets([...res.data]);
-      console.log(res.data);
     });
   }
 
   function handleDone() {
     // skicka till nästa sida
-    window.location.href = `${url}user/${ID}/secondowner`;
+    window.location.href = `/user/${ID}/secondowner`;
   }
 
   return (
@@ -132,9 +128,6 @@ export function RegisterPets() {
           ></input>
         </div>
         <button type="submit">Lägg till djur</button>
-        <button type="button" onClick={handleDone}>
-          Klar
-        </button>
       </form>
 
       <div className="allPets">
@@ -148,6 +141,11 @@ export function RegisterPets() {
           <h4>Ta bort</h4>
         </div>
         <GetPetById />
+      </div>
+      <div className="doneButton">
+        <button type="button" onClick={handleDone}>
+          Klar
+        </button>
       </div>
     </div>
   );

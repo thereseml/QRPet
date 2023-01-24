@@ -3,19 +3,12 @@ import { ISecOwn } from "../models/ISecOwn";
 import "./showpet.scss";
 
 export function ShowSecondOwner(props: ISecOwn) {
-  // funktion för att ta bort en extra ägare
-  function handleDelete() {
-    setTimeout(() => {
-      deleteSecondOwner();
-    }, 500);
-  }
-
   // api key
   const url = process.env.REACT_APP_API;
 
-  // ta bort en extra ägare
-  function deleteSecondOwner() {
-    axios
+  // funktion för att ta bort en extra ägare
+  async function handleDelete() {
+    await axios
       .delete(`${url}secondOwner/${props._id}`)
       .then((res) => {
         console.log(res);
@@ -23,11 +16,11 @@ export function ShowSecondOwner(props: ISecOwn) {
       .catch((err) => {
         console.log(err);
       });
-    window.location.reload();
 
     setTimeout(() => {
       console.log("Din extra ägare är nu borttagen!");
-    }, 1000);
+      window.location.reload();
+    }, 500);
   }
 
   return (

@@ -3,12 +3,37 @@ import "./layout.scss";
 import Sidebar from "./sidebar";
 import QRLogo from "../../img/QRPetLogo.png";
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
-
-function handleImg() {
-  window.location.href = "/";
-}
+import { useEffect, useState } from "react";
 
 export function Layout() {
+  // state för dölja/visa loginBtn
+  const [loginBtn, setLoginBtn] = useState(false);
+
+  // state för dölja/visa logoutBtn
+  const [logoutBtn, setLogoutBtn] = useState(false);
+
+  const ls = localStorage.getItem("OwnerID");
+  useEffect(() => {
+    if (ls?.length === 0) {
+      setLogoutBtn(false);
+      setLoginBtn(true);
+    } else {
+      setLoginBtn(false);
+      setLogoutBtn(true);
+    }
+  }, []);
+
+  function handleImg() {
+    window.location.href = "/";
+  }
+  function handleLogOut() {
+    console.log("Du är nu utloggad");
+    setLogoutBtn(false);
+    setLoginBtn(true);
+
+    localStorage.clear();
+  }
+
   return (
     <>
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
@@ -35,9 +60,16 @@ export function Layout() {
           </nav>
         </div>
         <div className="topHeaderRight">
-          <Link className="Btn" to="/userlogin">
-            Logga In
-          </Link>
+          {loginBtn && (
+            <Link className="Btn" to="/userlogin">
+              Logga In
+            </Link>
+          )}
+          {logoutBtn && (
+            <Link className="Btn" onClick={handleLogOut} to="/">
+              Logga Ut
+            </Link>
+          )}
 
           <Link className="Btn" to="/register">
             Registrera
@@ -51,9 +83,16 @@ export function Layout() {
         <div className="footerLeft">
           <p>info@qrpet.se</p>
           <p>0701 234 567</p>
-          <Link className="Btn" to="/userlogin">
-            Logga In
-          </Link>
+          {loginBtn && (
+            <Link className="Btn" to="/userlogin">
+              Logga In
+            </Link>
+          )}
+          {logoutBtn && (
+            <Link className="Btn" onClick={handleLogOut} to="/">
+              Logga Ut
+            </Link>
+          )}
         </div>
         <div className="footerCenter">
           <p>Väljvägen 1</p>

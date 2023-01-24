@@ -1,21 +1,15 @@
 import axios from "axios";
+import { ChangeEvent } from "react";
 import { IPetsId } from "../models/IPetsId";
 import "./showpet.scss";
 
 export function ShowPet(props: IPetsId) {
-  // funktion för att ta bort ett djur
-  function handleDelete() {
-    setTimeout(() => {
-      deletePet();
-    }, 500);
-  }
-
   // api key
   const url = process.env.REACT_APP_API;
 
-  // ta bort ett djur
-  function deletePet() {
-    axios
+  // funktion för att ta bort ett djur
+  async function handleDelete() {
+    await axios
       .delete(`${url}pets/${props._id}`)
       .then((res) => {
         console.log(res);
@@ -23,11 +17,11 @@ export function ShowPet(props: IPetsId) {
       .catch((err) => {
         console.log(err);
       });
-    window.location.reload();
 
     setTimeout(() => {
       console.log("Ditt djur är nu borttaget!");
-    }, 1000);
+      window.location.reload();
+    }, 500);
   }
 
   return (
