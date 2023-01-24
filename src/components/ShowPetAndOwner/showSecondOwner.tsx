@@ -10,10 +10,13 @@ export function ShowSecondOwner(props: ISecOwn) {
     }, 500);
   }
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   // ta bort en extra ägare
   function deleteSecondOwner() {
     axios
-      .delete(`http://localhost:8000/secondOwner/${props._id}`)
+      .delete(`${url}secondOwner/${props._id}`)
       .then((res) => {
         console.log(res);
       })

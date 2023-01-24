@@ -10,10 +10,13 @@ export function ShowPet(props: IPetsId) {
     }, 500);
   }
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   // ta bort ett djur
   function deletePet() {
     axios
-      .delete(`http://localhost:8000/pets/${props._id}`)
+      .delete(`${url}pets/${props._id}`)
       .then((res) => {
         console.log(res);
       })

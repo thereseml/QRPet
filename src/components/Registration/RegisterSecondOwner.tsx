@@ -1,15 +1,17 @@
 import axios from "axios";
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GetSecOwn } from "../functions/getSecOwn";
 import { ISecOwn } from "../models/ISecOwn";
-import { ShowSecondOwner } from "../ShowPetAndOwner/showSecondOwner";
 import "./Registration.scss";
 
 export function RegisterSecondOwner() {
   // hämta id från url
   const userId = useParams();
   let ID = userId.id;
+
+  // api key
+  const url = process.env.REACT_APP_API;
 
   // state för att spara in data från formuläret
   const [newSecondOwner, setNewSecondOwner] = useState({
@@ -37,7 +39,7 @@ export function RegisterSecondOwner() {
     };
 
     axios
-      .post("http://localhost:8000/secondOwner/add", newSecondOwner, {
+      .post(`${url}secondOwner/add`, newSecondOwner, {
         headers,
       })
       .then((res) => {
@@ -61,16 +63,14 @@ export function RegisterSecondOwner() {
 
   // hämta registrerade second owners
   function getRegisteredSecondOwner() {
-    axios
-      .get<ISecOwn[]>(`http://localhost:8000/secondOwner/owner/${ID}`)
-      .then((res) => {
-        setAllSecondOwners(res.data);
-      });
+    axios.get<ISecOwn[]>(`${url}secondOwner/owner/${ID}`).then((res) => {
+      setAllSecondOwners(res.data);
+    });
   }
 
   function handleDone() {
     // skicka till nästa sida
-    window.location.href = `http://localhost:3000/user/${ID}/userlogedin`;
+    window.location.href = `${url}user/${ID}/userlogedin`;
   }
 
   return (

@@ -11,6 +11,9 @@ export function RegisterPets() {
   const userId = useParams();
   let ID = userId.id;
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   // state för att spara in data från formuläret
   const [newPet, setNewPet] = useState<IPets>({
     name: "",
@@ -36,7 +39,7 @@ export function RegisterPets() {
 
     // posta data till backend
     axios
-      .post("http://localhost:8000/pets/add", newPet, { headers })
+      .post(`${url}pets/add`, newPet, { headers })
       .then((res) => {
         console.log(res);
       })
@@ -58,17 +61,15 @@ export function RegisterPets() {
 
   // hämta registrerade djur i lista
   function getRegisteredPets() {
-    axios
-      .get<IPetsId[]>(`http://localhost:8000/pets/owner/${ID}`)
-      .then((res) => {
-        setAllPets([...res.data]);
-        console.log(res.data);
-      });
+    axios.get<IPetsId[]>(`${url}pets/owner/${ID}`).then((res) => {
+      setAllPets([...res.data]);
+      console.log(res.data);
+    });
   }
 
   function handleDone() {
     // skicka till nästa sida
-    window.location.href = `http://localhost:3000/user/${ID}/secondowner`;
+    window.location.href = `${url}user/${ID}/secondowner`;
   }
 
   return (

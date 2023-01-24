@@ -12,13 +12,14 @@ export function GetPetById() {
   // state för alla djuren som hämtas/registreras
   const [allpets, setAllPets] = useState<IPetsId[]>([]);
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   useEffect(() => {
     // hämtar djur function
-    axios
-      .get<IPetsId[]>(`http://localhost:8000/pets/owner/${ID}`)
-      .then((res) => {
-        setAllPets([...res.data]);
-      });
+    axios.get<IPetsId[]>(`${url}pets/owner/${ID}`).then((res) => {
+      setAllPets([...res.data]);
+    });
   }, []);
 
   // skapar lista för alla registrerade djur

@@ -21,6 +21,9 @@ export function RegisterUser() {
     setNewUser({ ...newUser, [name]: e.target.value });
   }
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   // funktion för att posta data och spara responset
   async function postData() {
     //headers att skicka med
@@ -29,16 +32,12 @@ export function RegisterUser() {
     };
 
     // posta data till backend
-    const response = await axios.post(
-      "http://localhost:8000/users/add",
-      newUser,
-      { headers }
-    );
+    const response = await axios.post(`${url}users/add`, newUser, { headers });
 
     // spara response/idt
     const ID = response.data.id;
     // skicka till nästa sida
-    window.location.href = `http://localhost:3000/user/${ID}`;
+    window.location.href = `${url}user/${ID}`;
   }
 
   // funktion för att hantera knappen registrera

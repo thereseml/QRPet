@@ -14,8 +14,11 @@ export function LoggedInUser() {
 
   const [user, setUser] = useState<INewUser>();
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   useEffect(() => {
-    axios.get(`http://localhost:8000/users/${ID}`).then((res) => {
+    axios.get(`${url}users/${ID}`).then((res) => {
       console.log(res);
       setUser(res.data);
     });
@@ -51,7 +54,7 @@ export function LoggedInUser() {
           <div className="QRDiv">
             <h5>Din QR Kod:</h5>
             <QRCodeCanvas
-              value={`http://localhost:3000/QrInfo/${ID}`}
+              value={`${window.location.hostname}/QrInfo/${ID}`}
               size={200}
               bgColor={"#ffffff"}
               fgColor={"#000000"}

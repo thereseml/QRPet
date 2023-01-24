@@ -18,11 +18,14 @@ export function UserLogin() {
     console.log("loggain!");
   }
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   function Login() {
-    axios.post("http://localhost:8000/users/login", loginUser).then((res) => {
+    axios.post(`${url}users/login`, loginUser).then((res) => {
       console.log(res);
       // skicka till nästa sida
-      //   window.location.href = `http://localhost:3000/user/${ID}`;
+      //   window.location.href = `${url}user/${ID}`;
     });
   }
 
