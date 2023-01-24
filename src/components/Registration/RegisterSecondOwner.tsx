@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { GetSecOwn } from "../functions/getSecOwn";
+import { GetSecOwn } from "../Functions/getSecOwn";
 import { ISecOwn } from "../models/ISecOwn";
 import "./Registration.scss";
 

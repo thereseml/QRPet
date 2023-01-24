@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { GetPetById } from "../functions/getPetbyId";
+import { GetPetById } from "../Functions/getPetbyId";
 import { IPets } from "../models/IPets";
 import { IPetsId } from "../models/IPetsId";
 import "./Registration.scss";

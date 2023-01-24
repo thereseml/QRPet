@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { GetPetById } from "../functions/getPetbyId";
-import { GetSecOwn } from "../functions/getSecOwn";
+import { GetPetById } from "../Functions/getPetbyId";
+import { GetSecOwn } from "../Functions/getSecOwn";
 import { INewUser } from "../models/INewUser";
 import { QRCodeCanvas } from "qrcode.react";
 import "./login.scss";
@@ -26,11 +26,11 @@ export function LoggedInUser() {
 
   // ladda ner QR Koden
   const downloadQR = () => {
-    const canvas = document.getElementById("123456") as HTMLCanvasElement;
+    const canvas = document.getElementById("QRKod") as HTMLCanvasElement;
     const pngUrl = canvas.toDataURL("image/png");
     let downloadLink = document.createElement("a");
     downloadLink.href = pngUrl;
-    downloadLink.download = "123456.png";
+    downloadLink.download = "QRCode.png";
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
@@ -45,7 +45,7 @@ export function LoggedInUser() {
         <div className="UpperDiv">
           <div className="OwnerDiv">
             <h5>Dina uppgifter:</h5>
-            <p>Telefon: {user?.phone}</p>
+            <p>Telefon: 0{user?.phone}</p>
             <p>E-post: {user?.useremail}</p>
             <p>
               Adress: {user?.address}, {user?.city} {user?.zip}
