@@ -60,7 +60,7 @@ export function LoggedInUser() {
               fgColor={"#000000"}
               level={"L"}
               includeMargin={false}
-              id="123456"
+              id="QRKod"
             />
             <button type="button" onClick={downloadQR}>
               Ladda ner QR kod
