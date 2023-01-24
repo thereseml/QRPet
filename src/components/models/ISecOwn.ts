@@ -6,4 +6,5 @@ export interface ISecOwn {
   address: string;
   city: string;
   zip: string;
+  ownerId: string;
 }
