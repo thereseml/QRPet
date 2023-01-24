@@ -1,9 +1,8 @@
 import axios from "axios";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GetPetById } from "../functions/getPetbyId";
 import { IPets } from "../models/IPets";
-import { IPetsId } from "../models/IPetsId";
 import "./Registration.scss";
 
 export function RegisterPets() {
@@ -23,9 +22,6 @@ export function RegisterPets() {
     details: "",
     ownerId: ID,
   });
-
-  // state för alla djuren som hämtas/registreras
-  const [allpets, setAllPets] = useState<IPetsId[]>([]);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     let name = e.target.name;
@@ -50,17 +46,9 @@ export function RegisterPets() {
 
     setTimeout(() => {
       console.log("Ditt djur är nu registrerat!");
-      getRegisteredPets();
       event.target.reset();
       window.location.reload();
     }, 1000);
-  }
-
-  // hämta registrerade djur i lista
-  async function getRegisteredPets() {
-    await axios.get<IPetsId[]>(`${url}pets/owner/${ID}`).then((res) => {
-      setAllPets([...res.data]);
-    });
   }
 
   function handleDone() {
@@ -131,7 +119,7 @@ export function RegisterPets() {
       </form>
 
       <div className="allPets">
-        <h3>Registrerade djur</h3>
+        <h4>Registrerade djur</h4>
         <div className="tableDiv">
           <h4>Namn</h4>
           <h4>Djurtyp</h4>

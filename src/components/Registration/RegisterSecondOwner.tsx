@@ -1,8 +1,7 @@
 import axios from "axios";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GetSecOwn } from "../functions/getSecOwn";
-import { ISecOwn } from "../models/ISecOwn";
 import "./Registration.scss";
 
 export function RegisterSecondOwner() {
@@ -23,9 +22,6 @@ export function RegisterSecondOwner() {
     zip: 0,
     ownerId: ID,
   });
-
-  // spara alla secondOwners
-  const [allSecondOwners, setAllSecondOwners] = useState<ISecOwn[]>([]);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     let name = e.target.name;
@@ -52,17 +48,9 @@ export function RegisterSecondOwner() {
 
     setTimeout(() => {
       console.log("Din extra ägare är nu registrerad");
-      getRegisteredSecondOwner();
       event.target.reset();
       window.location.reload();
     }, 1000);
-  }
-
-  // hämta registrerade second owners
-  function getRegisteredSecondOwner() {
-    axios.get<ISecOwn[]>(`${url}secondOwner/owner/${ID}`).then((res) => {
-      setAllSecondOwners(res.data);
-    });
   }
 
   function handleDone() {
@@ -74,6 +62,7 @@ export function RegisterSecondOwner() {
 
   return (
     <div>
+      <h3>Registrera fler ägare</h3>
       <form className="secondOwnerForm" onSubmit={handleSubmit}>
         <div className="formDiv">
           <label>Förnamn:</label>
@@ -133,7 +122,7 @@ export function RegisterSecondOwner() {
       </form>
 
       <div className="allSecondOwners">
-        <h3>Registrerade extra ägare</h3>
+        <h4>Registrerade extra ägare</h4>
         <div className="tableDiv">
           <h4>Namn</h4>
           <h4>Telefon</h4>

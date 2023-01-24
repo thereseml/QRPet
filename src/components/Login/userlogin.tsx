@@ -26,6 +26,7 @@ export function UserLogin() {
       console.log(res);
       const ID = res.data.id;
 
+      // spara som inloggad
       localStorage.setItem("OwnerID", JSON.stringify(ID));
 
       // skicka till nästa sida

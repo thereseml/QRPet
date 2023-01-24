@@ -6,22 +6,29 @@ import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 export function Layout() {
-  // state för dölja/visa loginBtn
-  const [loginBtn, setLoginBtn] = useState(false);
-
-  // state för dölja/visa logoutBtn
+  // state för dölja/visa loginBtn/logoutBtn/registerBtn
+  const [loginBtn, setLoginBtn] = useState(true);
   const [logoutBtn, setLogoutBtn] = useState(false);
+  const [registerBtn, setRegisterBtn] = useState(true);
+  const [mypage, setMyPage] = useState(false);
 
+  // kolla om konto redan finns
   const ls = localStorage.getItem("OwnerID");
+
+  // dölja loginBtn/logoutBtn
   useEffect(() => {
-    if (ls?.length === 0) {
-      setLogoutBtn(false);
-      setLoginBtn(true);
-    } else {
+    if (ls) {
       setLoginBtn(false);
       setLogoutBtn(true);
+      setRegisterBtn(false);
+      setMyPage(true);
+    } else {
+      setLoginBtn(true);
+      setLogoutBtn(false);
+      setRegisterBtn(true);
+      setMyPage(false);
     }
-  }, []);
+  }, [ls]);
 
   function handleImg() {
     window.location.href = "/";
@@ -39,7 +46,12 @@ export function Layout() {
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
       <header className="topHeader">
         <div className="topHeaderLeft">
-          <img src={QRLogo} className="QRLogo" onClick={handleImg}></img>
+          <img
+            src={QRLogo}
+            alt="QR Pets Logga"
+            className="QRLogo"
+            onClick={handleImg}
+          ></img>
         </div>
         <div className="topHeaderCenter">
           <nav className="desktopNav">
@@ -70,10 +82,16 @@ export function Layout() {
               Logga Ut
             </Link>
           )}
-
-          <Link className="Btn" to="/register">
-            Registrera
-          </Link>
+          {registerBtn && (
+            <Link className="Btn" to="/register">
+              Registrera
+            </Link>
+          )}
+          {mypage && (
+            <Link className="Btn" to="/register">
+              Mina sidor
+            </Link>
+          )}
         </div>
       </header>
       <main>
@@ -97,9 +115,11 @@ export function Layout() {
         <div className="footerCenter">
           <p>Väljvägen 1</p>
           <p>123 45 Mamlö</p>
-          <Link className="Btn" to="/register">
-            Registrera
-          </Link>
+          {registerBtn && (
+            <Link className="Btn" to="/register">
+              Registrera
+            </Link>
+          )}
         </div>
         <div className="footerRight">
           <FaInstagram fontSize="50px" />

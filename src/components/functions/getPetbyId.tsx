@@ -13,7 +13,7 @@ export function GetPetById() {
   const [allpets, setAllPets] = useState<IPetsId[]>([]);
 
   // api key
-  const url = process.env.REACT_APP_API;
+  let url = process.env.REACT_APP_API;
 
   useEffect(() => {
     // hämtar djur function
