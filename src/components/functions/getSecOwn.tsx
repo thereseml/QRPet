@@ -12,13 +12,14 @@ export function GetSecOwn() {
   // spara alla secondOwners
   const [allSecondOwners, setAllSecondOwners] = useState<ISecOwn[]>([]);
 
+  // api key
+  const url = process.env.REACT_APP_API;
+
   // hämta registrerade andra ägare
   useEffect(() => {
-    axios
-      .get<ISecOwn[]>(`http://localhost:8000/secondOwner/owner/${ID}`)
-      .then((res) => {
-        setAllSecondOwners(res.data);
-      });
+    axios.get<ISecOwn[]>(`${url}secondOwner/owner/${ID}`).then((res) => {
+      setAllSecondOwners(res.data);
+    });
   }, []);
 
   // skapar lista för alla second owners
