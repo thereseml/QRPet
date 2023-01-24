@@ -17,6 +17,7 @@ import { RegisterPets } from "./components/Registration/registerPets";
 import { LoggedInUser } from "./components/Login/loggedinUser";
 import { AdminLogin } from "./components/Login/adminlogin";
 import { QRInfo } from "./components/QRInfo/QRInfo";
+import { LoggedinAdmin } from "./components/Login/loggedinAdmin";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -40,6 +41,7 @@ root.render(
           <Route path="user/:id/userlogedin" element={<LoggedInUser />} />
 
           <Route path="adminlogin" element={<AdminLogin />} />
+          <Route path="admin/:id/loggedinadmin" element={<LoggedinAdmin />} />
           <Route path="QrInfo/:id" element={<QRInfo />} />
           <Route path="*" element={<NotFound />} />
         </Route>

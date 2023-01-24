@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
+import { ListFormat } from "typescript";
 import { IAdminUser } from "../models/IadminUser";
 import "./login.scss";
 
@@ -16,10 +17,6 @@ export function AdminLogin() {
   // api key
   const url = process.env.REACT_APP_API;
 
-  function handleSubmit() {
-    console.log("loggain!");
-  }
-
   // funktion för att posta data
   async function postData() {
     //headers att skicka med
@@ -35,7 +32,25 @@ export function AdminLogin() {
     // spara response/idt
     const ID = await response.data.id;
     // skicka till nästa sida
-    // window.location.href = `/admin/${ID}`;
+    window.location.href = `/admin/${ID}/loggedinadmin`;
+  }
+
+  function Login() {
+    axios.post(`${url}admin/login`, adminUser).then((res) => {
+      console.log(res);
+      const ID = res.data.id;
+
+      // spara som inloggad
+      localStorage.setItem("AdminID", JSON.stringify(ID));
+
+      // skicka till nästa sida
+      // window.location.href = `/admin/${ID}/loggedinadmin`;
+    });
+  }
+
+  function handleLogin() {
+    Login();
+    console.log("loggain!");
   }
 
   function handleRegister(event: ChangeEvent<HTMLFormElement>) {
@@ -59,7 +74,7 @@ export function AdminLogin() {
           <label>Lösenord:</label>
           <input type="password" name="password" onChange={handleChange} />
         </div>
-        <button type="button" onClick={handleSubmit}>
+        <button type="button" onClick={handleLogin}>
           Logga in
         </button>
       </form>
