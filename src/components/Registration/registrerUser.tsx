@@ -4,6 +4,10 @@ import { INewUser } from "../models/INewUser";
 import "./Registration.scss";
 
 export function RegisterUser() {
+  // state för felmedelanden
+  const [showEmailError, setShowEmailError] = useState(false);
+  const [showPassWordError, setShowPassWordError] = useState(false);
+
   // state för att spara in data från formuläret
   const [newUser, setNewUser] = useState<INewUser>({
     firstname: "",
@@ -43,6 +47,18 @@ export function RegisterUser() {
   // funktion för att hantera knappen registrera
   function handleRegister(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
+    // kolla om email är korrekt
+    if (!/\S+@\S+\.\S+/.test(newUser.useremail)) {
+      setShowEmailError(true);
+
+      return;
+    }
+    // kolla om lösenordet är korrekt
+    if (newUser.password.length < 6) {
+      setShowPassWordError(true);
+      return;
+    }
+
     //kalla på postfunction med timer
     setTimeout(() => {
       postData();
@@ -130,6 +146,14 @@ export function RegisterUser() {
           </div>
           <button type="submit">Registrera</button>
         </form>
+        {showEmailError && (
+          <div className="ErrorMsg">Vänligen ange en giltlig e-post!</div>
+        )}
+        {showPassWordError && (
+          <div className="ErrorMsg">
+            Lösenord måste bestå av minst 6 tecken!
+          </div>
+        )}
       </div>
     </>
   );
