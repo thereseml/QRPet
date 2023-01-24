@@ -13,7 +13,9 @@ export function Layout() {
   const [mypage, setMyPage] = useState(false);
 
   // kolla om konto redan finns
-  const ls = localStorage.getItem("OwnerID");
+  const ls = JSON.parse(localStorage.getItem("OwnerID") || "null");
+
+  const loginRoute = `/user/${ls}/userlogedin`;
 
   // dölja loginBtn/logoutBtn
   useEffect(() => {
@@ -88,7 +90,7 @@ export function Layout() {
             </Link>
           )}
           {mypage && (
-            <Link className="Btn" to="/register">
+            <Link className="Btn" to={loginRoute}>
               Mina sidor
             </Link>
           )}
@@ -118,6 +120,11 @@ export function Layout() {
           {registerBtn && (
             <Link className="Btn" to="/register">
               Registrera
+            </Link>
+          )}
+          {mypage && (
+            <Link className="Btn" to={loginRoute}>
+              Mina sidor
             </Link>
           )}
         </div>
