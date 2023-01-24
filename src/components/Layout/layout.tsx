@@ -46,7 +46,12 @@ export function Layout() {
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
       <header className="topHeader">
         <div className="topHeaderLeft">
-          <img src={QRLogo} className="QRLogo" onClick={handleImg}></img>
+          <img
+            src={QRLogo}
+            alt="QR Pets Logga"
+            className="QRLogo"
+            onClick={handleImg}
+          ></img>
         </div>
         <div className="topHeaderCenter">
           <nav className="desktopNav">

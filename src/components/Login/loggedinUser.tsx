@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { GetPetById } from "../Functions/getPetbyId";
-import { GetSecOwn } from "../Functions/getSecOwn";
+import { GetPetById } from "../functions/getPetbyId";
+import { GetSecOwn } from "../functions/getSecOwn";
 import { INewUser } from "../models/INewUser";
 import { QRCodeCanvas } from "qrcode.react";
 import "./login.scss";
