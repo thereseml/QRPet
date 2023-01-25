@@ -40,6 +40,7 @@ export function RegisterUser() {
 
     // spara response/idt
     const ID = await response.data.id;
+
     // skicka till nästa sida
     window.location.href = `/user/${ID}`;
   }
