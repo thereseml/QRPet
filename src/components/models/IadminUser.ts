@@ -1,4 +1,6 @@
 export interface IAdminUser {
-  username: string;
+  firstname: string;
+  lastname: string;
+  adminemail: string;
   password: string;
 }

@@ -1,12 +1,20 @@
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
-import { ListFormat } from "typescript";
 import { IAdminUser } from "../models/IadminUser";
 import "./login.scss";
 
 export function AdminLogin() {
+  // state för felmedelanden
+  const [showEmailError, setShowEmailError] = useState(false);
+  const [showPassWordError, setShowPassWordError] = useState(false);
+  const [wrongLogin, setWrongLogin] = useState(false);
+  const [loginMsg, setLoginMsg] = useState(false);
+
+  // state för att spara in data från formuläret
   const [adminUser, SetAdminUser] = useState<IAdminUser>({
-    username: "",
+    firstname: "",
+    lastname: "",
+    adminemail: "",
     password: "",
   });
 
@@ -25,26 +33,31 @@ export function AdminLogin() {
     };
 
     // posta data till backend
-    const response = await axios.post(`${url}admin/add`, adminUser, {
-      headers,
-    });
-
-    // spara response/idt
-    const ID = await response.data.id;
-    // skicka till nästa sida
-    window.location.href = `/admin/${ID}/loggedinadmin`;
+    await axios
+      .post(`${url}admin/add`, adminUser, {
+        headers,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          setLoginMsg(true);
+        }
+      });
   }
 
-  function Login() {
-    axios.post(`${url}admin/login`, adminUser).then((res) => {
-      console.log(res);
+  async function Login() {
+    await axios.post(`${url}admin/login`, adminUser).then((res) => {
       const ID = res.data.id;
+      console.log(res.data);
 
-      // spara som inloggad
-      localStorage.setItem("AdminID", JSON.stringify(ID));
+      if (res.data.status === "error") {
+        setWrongLogin(true);
+      } else {
+        // spara som inloggad
+        localStorage.setItem("AdminID", JSON.stringify(ID));
 
-      // skicka till nästa sida
-      // window.location.href = `/admin/${ID}/loggedinadmin`;
+        // skicka till nästa sida
+        window.location.href = `/admin/${ID}/loggedinadmin`;
+      }
     });
   }
 
@@ -55,6 +68,18 @@ export function AdminLogin() {
 
   function handleRegister(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    // kolla om email är korrekt
+    if (!/\S+@\S+\.\S+/.test(adminUser.adminemail)) {
+      setShowEmailError(true);
+
+      return;
+    }
+    // kolla om lösenordet är korrekt
+    if (adminUser.password.length < 6) {
+      setShowPassWordError(true);
+      return;
+    }
     //kalla på postfunction med timer
     setTimeout(() => {
       postData();
@@ -65,10 +90,13 @@ export function AdminLogin() {
   return (
     <>
       <h3>Logga in som Admin!</h3>
+      {loginMsg && (
+        <div className="AcceptMsg">Du är registrerad, vänligen logga in!</div>
+      )}
       <form className="loginForm">
         <div className="formDiv">
-          <label>Användarnamn:</label>
-          <input type="text" name="username" onChange={handleChange} />
+          <label>E-post:</label>
+          <input type="e-mail" name="adminemail" onChange={handleChange} />
         </div>
         <div className="formDiv">
           <label>Lösenord:</label>
@@ -78,13 +106,22 @@ export function AdminLogin() {
           Logga in
         </button>
       </form>
+      {wrongLogin && <div>Fel e-post eller lösenord!</div>}
 
       <div className="RegisterDiv">
         <h3>Registrera dig som Admin!</h3>
         <form className="loginForm" onSubmit={handleRegister}>
           <div className="formDiv">
-            <label>Användarnamn:</label>
-            <input type="text" name="username" onChange={handleChange} />
+            <label>Förnamn:</label>
+            <input type="text" name="firstname" onChange={handleChange} />
+          </div>
+          <div className="formDiv">
+            <label>Efternamn:</label>
+            <input type="text" name="lastname" onChange={handleChange} />
+          </div>
+          <div className="formDiv">
+            <label>E-post:</label>
+            <input type="e-mail" name="adminemail" onChange={handleChange} />
           </div>
           <div className="formDiv">
             <label>Lösenord:</label>
@@ -92,6 +129,14 @@ export function AdminLogin() {
           </div>
           <button type="submit">Registrera</button>
         </form>
+        {showEmailError && (
+          <div className="ErrorMsg">Vänligen ange en giltlig e-post!</div>
+        )}
+        {showPassWordError && (
+          <div className="ErrorMsg">
+            Lösenord måste bestå av minst 6 tecken!
+          </div>
+        )}
       </div>
     </>
   );
