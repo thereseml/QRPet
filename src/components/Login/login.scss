@@ -47,3 +47,52 @@
     }
   }
 }
+
+.AdminDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+
+  .allOwners {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .tableDiv {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 80vw;
+
+      h4 {
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        width: 180px;
+        margin: 10px;
+        text-align: center;
+      }
+    }
+    .ownerDiv {
+      width: 80vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+
+      .ownerID {
+        font-size: 10px;
+      }
+
+      p {
+        font-size: 15px;
+        width: 180px;
+      }
+    }
+  }
+}

@@ -189,4 +189,48 @@ input {
 }
 .LoggedinDiv .QRDiv canvas {
   margin: 10px;
+}
+
+.AdminDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+.AdminDiv .allOwners {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.AdminDiv .allOwners .tableDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+}
+.AdminDiv .allOwners .tableDiv h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  width: 180px;
+  margin: 10px;
+  text-align: center;
+}
+.AdminDiv .allOwners .ownerDiv {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+.AdminDiv .allOwners .ownerDiv .ownerID {
+  font-size: 10px;
+}
+.AdminDiv .allOwners .ownerDiv p {
+  font-size: 15px;
+  width: 180px;
 }/*# sourceMappingURL=login.css.map */

@@ -61,6 +61,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 label {
@@ -83,6 +84,23 @@ input {
   font-style: italic;
 }
 
+.Btn {
+  text-decoration: none;
+  padding: 5px 10px;
+  outline: 1px solid #695853;
+  border-radius: 10px;
+  color: #695853;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #e7ded9;
+}
+.Btn:hover {
+  background-color: #695853;
+  color: #fff;
+}
+
 @media screen and (min-width: 720px) {
   label {
     font-size: 20px;
@@ -94,6 +112,11 @@ input {
   button {
     font-size: 18px;
     padding: 10px 20px;
+  }
+  .Btn {
+    font-size: 18px;
+    padding: 8px 15px;
+    margin: 5px;
   }
 }
 @media screen and (max-width: 720px) {
@@ -113,6 +136,14 @@ input {
   }
   p {
     font-size: 12px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  input {
+    width: 40vw;
+  }
+  .footerOne {
+    padding-bottom: 10px;
   }
 }
 .home {
