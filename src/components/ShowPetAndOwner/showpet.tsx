@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ChangeEvent } from "react";
 import { IPetsId } from "../models/IPetsId";
 import "./showpet.scss";
 

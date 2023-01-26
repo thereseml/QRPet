@@ -1,5 +1,4 @@
-import { IPets } from "./IPets";
-import { ISecOwn } from "./ISecOwn";
+import { IPetsId } from "./IPetsId";
 
 export interface IOwners {
   _id: string;
@@ -10,6 +9,4 @@ export interface IOwners {
   address: string;
   city: string;
   zip: number;
-  pets: IPets[];
-  secondOwenrs: ISecOwn[];
 }
