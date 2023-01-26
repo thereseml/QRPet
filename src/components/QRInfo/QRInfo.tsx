@@ -29,12 +29,12 @@ export function QRInfo() {
     });
 
     // hämta registrerade andra ägare
-    axios.get<ISecOwn[]>(`${url}/secondOwner/owner/${ID}`).then((res) => {
+    axios.get<ISecOwn[]>(`${url}secondOwner/owner/${ID}`).then((res) => {
       setAllSecondOwners(res.data);
       console.log(res.data);
     });
 
-    axios.get<IPetsId[]>(`${url}/pets/owner/${ID}`).then((res) => {
+    axios.get<IPetsId[]>(`${url}pets/owner/${ID}`).then((res) => {
       setAllPets([...res.data]);
       console.log(res.data);
     });

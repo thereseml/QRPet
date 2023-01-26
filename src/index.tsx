@@ -42,7 +42,7 @@ root.render(
 
           <Route path="adminlogin" element={<AdminLogin />} />
           <Route path="admin/:id/loggedinadmin" element={<LoggedinAdmin />} />
-          <Route path="QrInfo/:id" element={<QRInfo />} />
+          <Route path="qrinfo/:id" element={<QRInfo />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
