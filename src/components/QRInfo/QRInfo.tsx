@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { INewUser } from "../models/INewUser";
 import { IPetsId } from "../models/IPetsId";
 import { ISecOwn } from "../models/ISecOwn";
+import "./qrinfo.scss";
 
 export function QRInfo() {
   // hämta id från url
@@ -23,7 +24,7 @@ export function QRInfo() {
   const [allpets, setAllPets] = useState<IPetsId[]>([]);
 
   useEffect(() => {
-    axios.get(`${url}/users/${ID}`).then((res) => {
+    axios.get(`${url}users/${ID}`).then((res) => {
       console.log(res);
       setUser(res.data);
     });
@@ -42,29 +43,31 @@ export function QRInfo() {
 
   return (
     <>
+      <h3>Kontaktuppgifter:</h3>
       <div className="QRInfo">
-        <h3>Kontaktuppgifter:</h3>
         <div className="PetQRInfo">
-          <h5>Du har hittat:</h5>
           {allpets.map((pet) => {
             return (
               <>
-                <p>{pet.name}</p>
-                <p>{pet.breed}</p>
-                <p>{pet.color}</p>
-                <p>{pet.details}</p>
+                <h5>{pet.name}</h5>
+                <div className="PetQRShortInfo">
+                  <p>{pet.breed}</p>
+                  <p>{pet.color}</p>
+                  <p>{pet.details}</p>
+                </div>
               </>
             );
           })}
         </div>
         <div className="OwnerQRInfo">
-          <h5>{user?.firstname}</h5>
+          <h5>Ägare:</h5>
+          <h3>{user?.firstname}</h3>
           <p>Telefon: +46 {user?.phone}</p>
           <p>
             Adress: {user?.address}, {user?.zip} {user?.city}
           </p>
         </div>
-        <div className="SecOwnInfo">
+        <div className="SecOwnQRInfo">
           <h5>Andra ägare:</h5>
           {allSecondOwners.map((secondOwner) => {
             return (

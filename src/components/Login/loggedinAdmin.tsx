@@ -86,6 +86,7 @@ export function LoggedinAdmin() {
             <h4>Ort</h4>
             <h4>Djur</h4>
             <h4>Extra ägare</h4>
+            <h4>Ta bort</h4>
           </div>
           {allOwners.map((owner) => {
             return (
@@ -101,6 +102,7 @@ export function LoggedinAdmin() {
                   <p>{owner.city}</p>
                   <button onClick={() => handlePets(owner._id)}>Djur</button>
                   <button onClick={() => handleSecOwn(owner._id)}>Ägare</button>
+                  <button>Ta bort</button>
                 </div>
               </>
             );
