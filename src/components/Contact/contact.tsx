@@ -1,18 +1,38 @@
+import { useEffect, useState } from "react";
 import "./contact.scss";
+import { data } from "./QandA";
 
 export function Contact() {
+  // state för visa/dölja svaren
+  const [selected, setSelected] = useState(null);
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  const toggle = (i: any) => {
+    if (selected === i) {
+      return setSelected(null);
+    }
+
+    setSelected(i);
+  };
   return (
     <>
       <div className="contact">
         <div className="contactInfo">
-          <h3>Kontakta oss!</h3>
+          <h3>Behöver du hjälp eller har frågor? Kontakta oss idag!</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            condimentum, nunc ut viverra tincidunt, nunc felis aliquam nisl, ut
-            aliquet massa urna eget nunc. Sed euismod, nunc ut viverra
-            tincidunt, nunc felis aliquam nisl, ut aliquet massa urna eget nunc.
-            Sed euismod, nunc ut viverra tincidunt, nunc felis aliquam nisl, ut
-            aliquet massa urna eget nunc.
+            Om du har frågor eller behöver hjälp med vår service, tveka inte att
+            kontakta oss. Vi är här för att hjälpa dig och se till att din
+            upplevelse på vår hemsida är så lätt och problemfri som möjligt.
+          </p>
+          <p>
+            Du kan nå oss via e-post eller telefon. Vår kontaktinformation finns
+            tillgänglig på denna sida. Vi försöker alltid svara så snabbt som
+            möjligt, men om du inte får svar inom 24 timmar, vänligen skicka ett
+            e-postmeddelande igen eller ring oss.
+          </p>
+          <p>
+            Tack för att du väljer vår QR-kodregistreringsservice. Vi ser fram
+            emot att höra från dig.
           </p>
         </div>
         <form className="contactInfoForm">
@@ -34,6 +54,24 @@ export function Contact() {
           </div>
           <button type="submit">Skicka!</button>
         </form>
+      </div>
+      <div className="FAQ">
+        <h4>Vanliga frågor</h4>
+        {data.map((item, i) => {
+          return (
+            <div key={i} className="FAQitem">
+              <div className="questionDiv" onClick={() => toggle(i)}>
+                <h5>{item.question}</h5>
+                <button className="anwserBtn">
+                  {selected === i ? "-" : "+"}
+                </button>
+              </div>
+              <div className={selected === i ? "anwser.show" : "anwser"}>
+                {item.answer}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );

@@ -10,11 +10,14 @@ export function Home() {
       <div className="home">
         <div className="homeHero">
           <div className="homeText">
-            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
+            <h1>Välkommen till vår hemsida för husdjursägare!</h1>
             <h5>
-              In at dictum felis. Vestibulum cursus, purus in tincidunt
-              suscipit, nibh tellus fringilla enim, eu condimentum tortor nisl
-              sit amet augue.
+              Skydda din hund eller katt med vår unika
+              QR-kodregistreringsservice. Registrera din hund eller katt idag
+              och ge dem en chans att återförenas med dig om de skulle bli
+              förlorade.
+              <br />
+              Enkel, säker och effektiv - välkommen till vår hemsida!
             </h5>
           </div>
           <div className="homeImg">
@@ -26,7 +29,7 @@ export function Home() {
           </div>
         </div>
         <div className="UserStats">
-          <h3>In nec dapibus massa</h3>
+          <h3>Antalet nöjda kunder</h3>
           <div className="statOne">
             <FaPaw fontSize="30px" />
             <h2>+12K</h2>

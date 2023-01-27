@@ -48,21 +48,37 @@
 
 @media screen and (min-width: 1024px) {
   .siteInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     h1 {
-      position: absolute;
-      left: 35%;
-      margin-top: 100px;
+      width: 70vw;
     }
+
     .sidebysideHome {
+      display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      width: 100vw;
+
+      .textDiv {
+        width: 60vw;
+
+        h1 {
+          width: 50vw;
+        }
+        p {
+          width: 40vw;
+          margin: 50px 0px;
+          text-align: left;
+        }
+      }
+
       .phoneImg {
         width: 35vw;
       }
-    }
-    hr {
-      width: 100vw;
-      margin-left: -20px;
     }
   }
 }
