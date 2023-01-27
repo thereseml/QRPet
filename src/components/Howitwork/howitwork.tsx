@@ -6,55 +6,63 @@ import "./howitwork.scss";
 
 export function Howitwork({}) {
   return (
-    <div className="aboutDiv">
-      <div className="stepOne">
-        <div className="LogosDiv">
-          <FaUserFriends fontSize="50px" />
-          <FaDog fontSize="50px" />
-          <FaCat fontSize="50px" />
+    <>
+      <h1>Hur fungerar QR Pet?</h1>
+      <div className="aboutDiv">
+        <div className="stepOne">
+          <div className="LogosDiv">
+            <FaUserFriends fontSize="50px" />
+            <FaDog fontSize="50px" />
+            <FaCat fontSize="50px" />
+          </div>
+          <div className="aboutDivText">
+            <h3>1</h3>
+            <p>
+              Samla hela familjen framför datorn, surfplattan eller mobilen. Läs
+              igenom vår hemsida för att få förståelse för konceptet.
+            </p>
+          </div>
         </div>
-        <div className="aboutDivText">
-          <h3>1</h3>
-          <p>
-            Pellentesque facilisis enim id bibendum cursus. Morbi sem massa,
-            consequat quis lacinia vel, gravida a sapien.
-          </p>
+        <div className="stepTwo">
+          <div className="LogosDiv">
+            <HiDocumentAdd fontSize="80px" />
+          </div>
+          <div className="aboutDivText">
+            <h3>2</h3>
+            <p>
+              Du registrerar dig och dina husdjur genom att klicka på{" "}
+              <a href="/register">registrera</a>, det går även att registrera
+              fler vänner eller familjemedlemmar ifall det önskas.
+            </p>
+          </div>
+        </div>
+        <div className="stepThree">
+          <div className="LogosDiv">
+            <HiQrCode fontSize="80px" />
+          </div>
+          <div className="aboutDivText">
+            <h3>3</h3>
+            <p>
+              När registreringen är klar får du en QR Kod som du enkelt kan
+              ladda ner och sätta i ditt husdjurs halsband. Du kan även{" "}
+              <a href="userlogin">logga in</a> och ändra eller ta bort dina
+              uppgifter.
+            </p>
+          </div>
+        </div>
+        <div className="stepFour">
+          <div className="aboutDivText">
+            <h3>4</h3>
+            <p>
+              Om något händer med ditt husdjur och någon hittar det kan de
+              enkelt skanna QR koden och komma i kontakt med dig, om de inte får
+              kontakt med dig så kan de enkelt kontakta någon av de andra ägarna
+              du fyllt i.
+            </p>
+          </div>
+          <img src={dogQR} className="dogQR" alt="Dog whit QR code in collar" />
         </div>
       </div>
-      <div className="stepTwo">
-        <div className="LogosDiv">
-          <HiDocumentAdd fontSize="80px" />
-        </div>
-        <div className="aboutDivText">
-          <h3>2</h3>
-          <p>
-            Aenean vulputate, eros sit amet auctor condimentum, sapien arcu
-            sollicitudin elit, sit amet vehicula turpis augue nec elit.
-          </p>
-        </div>
-      </div>
-      <div className="stepThree">
-        <div className="LogosDiv">
-          <HiQrCode fontSize="80px" />
-        </div>
-        <div className="aboutDivText">
-          <h3>3</h3>
-          <p>
-            Phasellus consequat leo at dignissim porta. Nullam pharetra
-            efficitur dictum.
-          </p>
-        </div>
-      </div>
-      <div className="stepFour">
-        <div className="aboutDivText">
-          <h3>4</h3>
-          <p>
-            Suspendisse id elementum ex, eget sollicitudin ipsum. Nam felis
-            neque, ornare nec lacinia sit amet, scelerisque quis justo.
-          </p>
-        </div>
-        <img src={dogQR} className="dogQR" alt="Dog whit QR code in collar" />
-      </div>
-    </div>
+    </>
   );
 }

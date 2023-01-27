@@ -35,6 +35,32 @@
   }
 }
 
+.FAQ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .FAQitem {
+    width: 50vw;
+    .questionDiv {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .anwser {
+      display: none;
+    }
+
+    .anwser.show {
+      display: block;
+    }
+  }
+}
+
 // desktop
 @media screen and (min-width: 1024px) {
   .contact {
@@ -42,7 +68,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 70vh;
 
     .contactInfo {
       width: 40vw;
