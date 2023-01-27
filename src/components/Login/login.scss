@@ -77,6 +77,7 @@
         text-align: center;
       }
     }
+
     .ownerDiv {
       width: 80vw;
       display: flex;
@@ -93,6 +94,14 @@
         font-size: 15px;
         width: 180px;
       }
+    }
+
+    .hidePet {
+      display: none;
+    }
+
+    .showPet {
+      display: block;
     }
   }
 }
