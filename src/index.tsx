@@ -15,9 +15,9 @@ import { RegisterUser } from "./components/Registration/registrerUser";
 import { RegisterSecondOwner } from "./components/Registration/RegisterSecondOwner";
 import { RegisterPets } from "./components/Registration/registerPets";
 import { LoggedInUser } from "./components/Login/loggedinUser";
-import { AdminLogin } from "./components/Login/adminlogin";
+import { AdminLogin } from "./components/Admin/adminlogin";
 import { QRInfo } from "./components/QRInfo/QRInfo";
-import { LoggedinAdmin } from "./components/Login/loggedinAdmin";
+import { LoggedinAdmin } from "./components/Admin/loggedinAdmin";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

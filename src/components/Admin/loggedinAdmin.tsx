@@ -1,12 +1,11 @@
 import axios from "axios";
-import { setMaxIdleHTTPParsers } from "http";
 import { useEffect, useState } from "react";
 import { IOwners } from "../models/IOwners";
 import { IPetsId } from "../models/IPetsId";
 import { ISecOwn } from "../models/ISecOwn";
 import { ShowPet } from "../ShowPetAndOwner/showpet";
 import { ShowSecondOwner } from "../ShowPetAndOwner/showSecondOwner";
-import "./login.scss";
+import "../../index.scss";
 
 export function LoggedinAdmin() {
   // state för alla djuren som hämtas/registreras
@@ -15,10 +14,6 @@ export function LoggedinAdmin() {
   const [SecondOwners, setSecondOwners] = useState<ISecOwn[]>([]);
   // state för alla owners
   const [allOwners, setAllOwners] = useState<IOwners[]>([]);
-
-  // state för dölja och visa djuren/andra ägare
-  const [showPets, setShowPets] = useState(false);
-  const [showSecondOwners, setShowSecondOwners] = useState(false);
 
   // state för att visa/dölja djuren/anda ägare
   const [selectedPets, setSelectedPets] = useState(null);
@@ -44,12 +39,6 @@ export function LoggedinAdmin() {
       axios.get<IPetsId[]>(`${url}pets/owner/${id}`).then((res) => {
         setPets(res.data);
         console.log(res.data);
-        if (res.data.length > 0) {
-          setShowSecondOwners(false);
-          setShowPets(true);
-        } else {
-          setShowPets(false);
-        }
       });
     }, 500);
   }
@@ -62,12 +51,6 @@ export function LoggedinAdmin() {
       axios.get<ISecOwn[]>(`${url}secondOwner/owner/${id}`).then((res) => {
         setSecondOwners(res.data);
         console.log(res.data);
-        if (res.data.length > 0) {
-          setShowPets(false);
-          setShowSecondOwners(true);
-        } else {
-          setShowSecondOwners(false);
-        }
       });
     }, 500);
   }
@@ -85,6 +68,25 @@ export function LoggedinAdmin() {
     }
     setSelectedSecOwn(i);
   };
+
+  async function deleteAll(ID: string) {
+    await axios.delete(`${url}users/${ID}`).then((res) => {
+      console.log(res.data);
+    });
+    // ta bort djur med ägarens ID
+    await axios.delete(`${url}pets/owner/${ID}`).then((res) => {
+      console.log(res.data);
+    });
+
+    // ta bort andra ägare med ägarens ID
+    await axios.delete(`${url}secondOwner/owner/${ID}`).then((res) => {
+      console.log(res.data);
+    });
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  }
 
   return (
     <>
@@ -126,12 +128,19 @@ export function LoggedinAdmin() {
                   >
                     {selectedPets === i ? "Dölj" : "Visa"}
                   </button>
-                  <button onClick={() => toggleSecOwn(i)}>
+                  <button
+                    onClick={() => {
+                      toggleSecOwn(i);
+                      handleSecOwn(owner._id);
+                    }}
+                  >
                     {selectedSecOwn === i ? "Dölj" : "Visa"}
                   </button>
-                  <button>Ta bort</button>
+                  <button onClick={() => deleteAll(owner._id)}>Ta bort</button>
                 </div>
-                <div className={selectedPets === i ? "showPet" : "hidePet"}>
+                <div
+                  className={selectedPets === i ? "showPetSec" : "hidePetSec"}
+                >
                   {pets.length > 0 && (
                     <div className="tableDiv">
                       <h4>Namn</h4>
@@ -148,29 +157,28 @@ export function LoggedinAdmin() {
                     })}
                   </div>
                 </div>
+                <div
+                  className={selectedSecOwn === i ? "showPetSec" : "hidePetSec"}
+                >
+                  {SecondOwners.length > 0 && (
+                    <div className="tableDiv">
+                      <h4>Namn</h4>
+                      <h4>Telefon</h4>
+                      <h4>Adress</h4>
+                      <h4>Stad</h4>
+                      <h4>Postnummer</h4>
+                      <h4>Ta bort</h4>
+                    </div>
+                  )}
+                  <div className="OwnersPets">
+                    {SecondOwners.map((secOwn) => {
+                      return <ShowSecondOwner key={secOwn._id} {...secOwn} />;
+                    })}
+                  </div>
+                </div>
               </>
             );
           })}
-          <div>
-            {showSecondOwners && (
-              <>
-                <h5>Registrerade extra ägare</h5>
-                <div className="tableDiv">
-                  <h4>Namn</h4>
-                  <h4>Telefon</h4>
-                  <h4>Adress</h4>
-                  <h4>Stad</h4>
-                  <h4>Postnummer</h4>
-                  <h4>Ta bort</h4>
-                </div>
-                <div className="OwnersPets">
-                  {SecondOwners.map((secOwn) => {
-                    return <ShowSecondOwner key={secOwn._id} {...secOwn} />;
-                  })}
-                </div>
-              </>
-            )}
-          </div>
         </div>
       </div>
     </>

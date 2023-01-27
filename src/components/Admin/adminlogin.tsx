@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
 import { IAdminUser } from "../models/IadminUser";
-import "./login.scss";
+import "../../index.scss";
 
 export function AdminLogin() {
   // state för felmedelanden

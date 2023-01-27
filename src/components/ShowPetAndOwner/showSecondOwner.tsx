@@ -29,7 +29,7 @@ export function ShowSecondOwner(props: ISecOwn) {
         <p className="pName">
           {props.firstname} {props.lastname}
         </p>
-        <p>{props.phone}</p>
+        <p>0{props.phone}</p>
         <p>{props.address}</p>
         <p>{props.city}</p>
         <p>{props.zip}</p>
