@@ -169,6 +169,7 @@ input {
 }
 .home .UserStats h3 {
   margin: 0px;
+  width: 50vw;
 }
 .home .UserStats .statOne {
   margin: 10px;

@@ -191,10 +191,24 @@ input {
   justify-content: space-around;
   align-items: flex-start;
 }
+.aboutDiv .aboutDivText a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: black;
+  letter-spacing: 1px;
+}
+.aboutDiv .aboutDivText a:hover {
+  color: #8f6152;
+}
 .aboutDiv .dogQR {
   width: 60vw;
   height: 100%;
   float: right;
+}
+
+h1 {
+  text-align: center;
 }
 
 @media screen and (min-width: 720px) {
@@ -245,8 +259,7 @@ input {
   }
   .aboutDiv .stepOne,
 .aboutDiv .stepTwo,
-.aboutDiv .stepThree,
-.aboutDiv .stepFour {
+.aboutDiv .stepThree {
     display: flex;
     flex-direction: row;
     width: 40%;
@@ -254,9 +267,17 @@ input {
   }
   .aboutDiv .stepOne svg,
 .aboutDiv .stepTwo svg,
-.aboutDiv .stepThree svg,
-.aboutDiv .stepFour svg {
+.aboutDiv .stepThree svg {
     margin: 10px;
+  }
+  .aboutDiv .stepFour {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+  }
+  .aboutDiv .stepFour .dogQR {
+    width: 20vw;
+    float: right;
   }
   .aboutDiv .aboutDivText {
     display: flex;
@@ -271,9 +292,5 @@ input {
   }
   .aboutDiv h3 {
     margin: 15px;
-  }
-  .aboutDiv .dogQR {
-    width: 30vw;
-    float: right;
   }
 }/*# sourceMappingURL=howitwork.css.map */

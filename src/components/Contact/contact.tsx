@@ -25,14 +25,12 @@ export function Contact() {
             upplevelse på vår hemsida är så lätt och problemfri som möjligt.
           </p>
           <p>
-            Du kan nå oss via e-post eller telefon. Vår kontaktinformation finns
-            tillgänglig på denna sida. Vi försöker alltid svara så snabbt som
-            möjligt, men om du inte får svar inom 24 timmar, vänligen skicka ett
-            e-postmeddelande igen eller ring oss.
+            Vi försöker alltid svara så snabbt som möjligt, men om du inte får
+            svar inom 24 timmar, vänligen skicka ett e-postmeddelande igen eller
+            ring oss.
           </p>
           <p>
-            Tack för att du väljer vår QR-kodregistreringsservice. Vi ser fram
-            emot att höra från dig.
+            Tack för att du väljer QR Pet. Vi ser fram emot att höra från dig.
           </p>
         </div>
         <form className="contactInfoForm">

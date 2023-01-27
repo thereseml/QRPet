@@ -1,7 +1,7 @@
 export function NotFound() {
   return (
     <>
-      <p>Hello from NotFound!</p>
+      <h5>Sidan du söker finns tyvärr inte!</h5>
     </>
   );
 }
