@@ -20,6 +20,10 @@ export function LoggedinAdmin() {
   const [showPets, setShowPets] = useState(false);
   const [showSecondOwners, setShowSecondOwners] = useState(false);
 
+  // state för att visa/dölja djuren/anda ägare
+  const [selectedPets, setSelectedPets] = useState(null);
+  const [selectedSecOwn, setSelectedSecOwn] = useState(null);
+
   // api key
   let url = process.env.REACT_APP_API;
 
@@ -68,6 +72,20 @@ export function LoggedinAdmin() {
     }, 500);
   }
 
+  const togglePets = (i: any) => {
+    if (selectedPets === i) {
+      return setSelectedPets(null);
+    }
+    setSelectedPets(i);
+  };
+
+  const toggleSecOwn = (i: any) => {
+    if (selectedSecOwn === i) {
+      return setSelectedSecOwn(null);
+    }
+    setSelectedSecOwn(i);
+  };
+
   return (
     <>
       <div className="AdminDiv">
@@ -88,10 +106,10 @@ export function LoggedinAdmin() {
             <h4>Extra ägare</h4>
             <h4>Ta bort</h4>
           </div>
-          {allOwners.map((owner) => {
+          {allOwners.map((owner, i) => {
             return (
               <>
-                <div className="ownerDiv" key={owner._id}>
+                <div className="ownerDiv" key={i}>
                   <p className="ownerID">{owner._id}</p>
                   <p>{owner.firstname}</p>
                   <p>{owner.lastname}</p>
@@ -100,50 +118,59 @@ export function LoggedinAdmin() {
                   <p>{owner.address}</p>
                   <p>{owner.zip}</p>
                   <p>{owner.city}</p>
-                  <button onClick={() => handlePets(owner._id)}>Djur</button>
-                  <button onClick={() => handleSecOwn(owner._id)}>Ägare</button>
+                  <button
+                    onClick={() => {
+                      togglePets(i);
+                      handlePets(owner._id);
+                    }}
+                  >
+                    {selectedPets === i ? "Dölj" : "Visa"}
+                  </button>
+                  <button onClick={() => toggleSecOwn(i)}>
+                    {selectedSecOwn === i ? "Dölj" : "Visa"}
+                  </button>
                   <button>Ta bort</button>
+                </div>
+                <div className={selectedPets === i ? "showPet" : "hidePet"}>
+                  {pets.length > 0 && (
+                    <div className="tableDiv">
+                      <h4>Namn</h4>
+                      <h4>Djurtyp</h4>
+                      <h4>Ras</h4>
+                      <h4>Färg</h4>
+                      <h4>Övriga detaljer</h4>
+                      <h4>Ta bort</h4>
+                    </div>
+                  )}
+                  <div className="OwnersPets">
+                    {pets.map((pet) => {
+                      return <ShowPet key={pet._id} {...pet} />;
+                    })}
+                  </div>
                 </div>
               </>
             );
           })}
-          {showPets && (
-            <>
-              <h5>Registrerade djur</h5>
-              <div className="tableDiv">
-                <h4>Namn</h4>
-                <h4>Djurtyp</h4>
-                <h4>Ras</h4>
-                <h4>Färg</h4>
-                <h4>Övriga detaljer</h4>
-                <h4>Ta bort</h4>
-              </div>
-              <div className="OwnersPets">
-                {pets.map((pet) => {
-                  return <ShowPet key={pet._id} {...pet} />;
-                })}
-              </div>
-            </>
-          )}
-
-          {showSecondOwners && (
-            <>
-              <h5>Registrerade extra ägare</h5>
-              <div className="tableDiv">
-                <h4>Namn</h4>
-                <h4>Telefon</h4>
-                <h4>Adress</h4>
-                <h4>Stad</h4>
-                <h4>Postnummer</h4>
-                <h4>Ta bort</h4>
-              </div>
-              <div className="OwnersPets">
-                {SecondOwners.map((secOwn) => {
-                  return <ShowSecondOwner key={secOwn._id} {...secOwn} />;
-                })}
-              </div>
-            </>
-          )}
+          <div>
+            {showSecondOwners && (
+              <>
+                <h5>Registrerade extra ägare</h5>
+                <div className="tableDiv">
+                  <h4>Namn</h4>
+                  <h4>Telefon</h4>
+                  <h4>Adress</h4>
+                  <h4>Stad</h4>
+                  <h4>Postnummer</h4>
+                  <h4>Ta bort</h4>
+                </div>
+                <div className="OwnersPets">
+                  {SecondOwners.map((secOwn) => {
+                    return <ShowSecondOwner key={secOwn._id} {...secOwn} />;
+                  })}
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </>
