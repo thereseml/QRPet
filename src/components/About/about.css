@@ -186,20 +186,33 @@ input {
   }
 }
 @media screen and (min-width: 1024px) {
+  .siteInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .siteInfo h1 {
-    position: absolute;
-    left: 35%;
-    margin-top: 100px;
+    width: 70vw;
   }
   .siteInfo .sidebysideHome {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    width: 100vw;
+  }
+  .siteInfo .sidebysideHome .textDiv {
+    width: 60vw;
+  }
+  .siteInfo .sidebysideHome .textDiv h1 {
+    width: 50vw;
+  }
+  .siteInfo .sidebysideHome .textDiv p {
+    width: 40vw;
+    margin: 50px 0px;
+    text-align: left;
   }
   .siteInfo .sidebysideHome .phoneImg {
     width: 35vw;
-  }
-  .siteInfo hr {
-    width: 100vw;
-    margin-left: -20px;
   }
 }/*# sourceMappingURL=about.css.map */

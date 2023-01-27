@@ -177,13 +177,35 @@ input {
   font-style: italic;
 }
 
+.FAQ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.FAQ .FAQitem {
+  width: 50vw;
+}
+.FAQ .FAQitem .questionDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.FAQ .FAQitem .anwser {
+  display: none;
+}
+.FAQ .FAQitem .anwser.show {
+  display: block;
+}
+
 @media screen and (min-width: 1024px) {
   .contact {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 70vh;
   }
   .contact .contactInfo {
     width: 40vw;

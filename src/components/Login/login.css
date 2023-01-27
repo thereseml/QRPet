@@ -233,4 +233,10 @@ input {
 .AdminDiv .allOwners .ownerDiv p {
   font-size: 15px;
   width: 180px;
+}
+.AdminDiv .allOwners .hidePetSec {
+  display: none;
+}
+.AdminDiv .allOwners .showPetSec {
+  display: block;
 }/*# sourceMappingURL=login.css.map */
