@@ -1,0 +1,57 @@
+.AdminDiv {
+  .allOwners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+
+    h4 {
+      font-size: 20px;
+    }
+
+    .tableDiv {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 90vw;
+
+      h4 {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        width: 100px;
+        margin: 0px;
+      }
+    }
+    .ownerDiv {
+      width: 90vw;
+      p {
+        font-size: 10px;
+        width: 180px;
+        margin: 5px;
+      }
+    }
+  }
+}
+.adminLogin {
+  height: 80vh;
+}
+
+@media screen and (min-width: 768px) {
+  .AdminDiv {
+    .allOwners {
+      .tableDiv {
+        h4 {
+          font-size: 20px;
+        }
+      }
+      .ownerDiv {
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

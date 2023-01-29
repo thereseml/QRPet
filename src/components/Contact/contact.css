@@ -184,7 +184,7 @@ input {
   align-items: center;
 }
 .FAQ .FAQitem {
-  width: 50vw;
+  width: 80vw;
 }
 .FAQ .FAQitem .questionDiv {
   display: flex;
@@ -192,6 +192,10 @@ input {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+}
+.FAQ .FAQitem .questionDiv h5 {
+  font-size: 15px;
+  font-weight: 600;
 }
 .FAQ .FAQitem .anwser {
   display: none;
@@ -212,5 +216,9 @@ input {
   }
   .contact .contactInfoForm .formDiv textarea {
     width: 40vw;
+  }
+  .FAQ .FAQitem .questionDiv h5 {
+    font-size: 20px;
+    font-weight: 600;
   }
 }/*# sourceMappingURL=contact.css.map */

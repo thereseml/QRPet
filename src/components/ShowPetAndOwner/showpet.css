@@ -148,21 +148,35 @@ input {
 }
 .petsDiv,
 .secondOwnerDiv {
-  width: 80vw;
+  width: 90vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 100px;
 }
 .petsDiv .pName,
 .secondOwnerDiv .pName {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 700;
 }
 .petsDiv p,
 .secondOwnerDiv p {
-  font-size: 15px;
+  font-size: 12px;
   margin: 0px;
   width: 180px;
+}
+
+@media screen and (min-width: 768px) {
+  .petsDiv .pName,
+.secondOwnerDiv .pName {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .petsDiv p,
+.secondOwnerDiv p {
+    font-size: 18px;
+    margin: 0px;
+    width: 180px;
+  }
 }/*# sourceMappingURL=showpet.css.map */

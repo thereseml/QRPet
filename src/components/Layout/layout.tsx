@@ -4,6 +4,7 @@ import Sidebar from "./sidebar";
 import QRLogo from "../../img/QRPetLogo.png";
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { BiHappyAlt } from "react-icons/bi";
 
 export function Layout() {
   // state för dölja/visa loginBtn/logoutBtn/registerBtn
@@ -11,9 +12,12 @@ export function Layout() {
   const [logoutBtn, setLogoutBtn] = useState(false);
   const [registerBtn, setRegisterBtn] = useState(true);
   const [mypage, setMyPage] = useState(false);
+  const [adminLogin, setAdminLogin] = useState(false);
+  const [noAdmin, setNoAdmin] = useState(true);
 
   // kolla om konto redan finns
   const ls = JSON.parse(localStorage.getItem("OwnerID") || "null");
+  const als = JSON.parse(localStorage.getItem("AdminID") || "null");
 
   const loginRoute = `/user/${ls}/userlogedin`;
 
@@ -30,6 +34,13 @@ export function Layout() {
       setRegisterBtn(true);
       setMyPage(false);
     }
+    if (als) {
+      setAdminLogin(true);
+      setNoAdmin(false);
+    } else {
+      setAdminLogin(false);
+      setNoAdmin(true);
+    }
   }, [ls]);
 
   function handleImg() {
@@ -43,8 +54,36 @@ export function Layout() {
     localStorage.clear();
   }
 
+  function handleAdminLogout() {
+    setAdminLogin(false);
+    setNoAdmin(true);
+
+    localStorage.clear();
+  }
+
+  const [alert, setAlert] = useState(true);
+
+  function handleX() {
+    setAlert(false);
+  }
+
   return (
     <>
+      {alert && (
+        <div className="alertMsg">
+          <h3>Hej!</h3>
+          <p>
+            Jag studerar till Front End Utvecklare på Medieinstitutet, och detta
+            är mitt examensarbete.
+            <br /> Detta är endast en prototyp och bör ej användas!
+          </p>
+          <p>Ta gärna en titt!</p>
+          <BiHappyAlt />
+          <h5>Mvh Therese Lindholm</h5>
+
+          <button onClick={handleX}>X</button>
+        </div>
+      )}
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
       <header className="topHeader">
         <div className="topHeaderLeft">
@@ -129,8 +168,18 @@ export function Layout() {
           )}
         </div>
         <div className="footerRight">
-          <FaInstagram fontSize="50px" />
-          <FaFacebookSquare fontSize="50px" />
+          <div className="footerIcon">
+            <FaInstagram fontSize="50px" />
+            <FaFacebookSquare fontSize="50px" />
+          </div>
+          {adminLogin && (
+            <Link className="Btn" onClick={handleAdminLogout} to="/adminlogin">
+              Logga ut
+            </Link>
+          )}
+          <Link className="Btn" to="/adminlogin">
+            Admin
+          </Link>
         </div>
       </footer>
     </>

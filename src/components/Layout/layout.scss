@@ -1,4 +1,27 @@
 @import "/src/index.scss";
+.alertMsg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 30vh;
+  margin: 0px;
+  background-color: $lightBeige;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  h3 {
+    margin: 0px;
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  h5 {
+    font-size: 12px;
+  }
+}
 
 .topHeader {
   height: 100px;
@@ -41,6 +64,7 @@
   justify-content: space-around;
   align-items: center;
   background-color: $lightBeige;
+  padding: 10px 0px;
 
   .footerLeft {
     margin: 10px;

@@ -1,4 +1,3 @@
-import { Howitwork } from "./../Howitwork/howitwork";
 import { About } from "../About/about";
 import "./home.scss";
 import CatDogCat from "../../img/CatDogCat.png";
@@ -41,7 +40,6 @@ export function Home() {
           </div>
         </div>
         <About />
-        <Howitwork />
       </div>
     </>
   );

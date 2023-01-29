@@ -6,24 +6,23 @@ export const data = [
   },
   {
     question: "Kan jag registrera flera husdjur på samma konto?",
-    answer:
-      "Ja, du kan registrera flera husdjur på samma konto och få en unik QR-kod för varje djur.",
+    answer: "Ja, du kan registrera flera husdjur på samma konto.",
   },
   {
     question:
-      " Vad händer om jag behöver uppdatera mina kontaktuppgifter eller foto av mitt husdjur?",
+      " Vad händer om jag behöver uppdatera mina kontaktuppgifter eller informationen om mitt husdjur?",
     answer:
-      "Du kan enkelt uppdatera dina kontaktuppgifter eller ladda upp ett nytt foto av ditt husdjur genom att logga in på ditt konto och redigera informationen.",
+      "Du kan enkelt uppdatera dina uppgifter genom att logga in på ditt konto och redigera informationen.",
   },
   {
     question:
-      "Vad händer om jag har problem med att registrera mitt husdjur eller får min QR-kod?",
+      "Vad händer om jag har problem med att registrera mitt husdjur eller få min QR-kod?",
     answer:
-      "Om du har problem med att registrera ditt husdjur eller får din QR-kod, vänligen kontakta vår kundtjänst så hjälper vi dig att lösa problemet.",
+      "Om du har problem med att registrera ditt husdjur eller få din QR-kod, vänligen kontakta vår kundtjänst så hjälper vi dig att lösa problemet.",
   },
   {
     question: "Vad händer om någon hittar mitt förlorade djur?",
     answer:
-      "Om någon hittar ditt förlorade djur, kan de scanna QR-koden på kragen och kontakta dig direkt via telefon eller e-post.",
+      "Om någon hittar ditt förlorade djur, kan de scanna QR-koden på kragen och kontakta dig direkt via telefon eller gå till din adress",
   },
 ];

@@ -46,11 +46,9 @@ export function RegisterSecondOwner() {
         console.log(err);
       });
 
-    setTimeout(() => {
-      console.log("Din extra ägare är nu registrerad");
-      event.target.reset();
-      window.location.reload();
-    }, 1000);
+    // töm formuläret
+    event.target.reset();
+    window.location.reload();
   }
 
   function handleDone() {
@@ -122,13 +120,11 @@ export function RegisterSecondOwner() {
       </form>
 
       <div className="allSecondOwners">
-        <h4>Registrerade extra ägare</h4>
+        <h4>Dina registrerade ägare</h4>
         <div className="tableDiv">
           <h4>Namn</h4>
           <h4>Telefon</h4>
           <h4>Adress</h4>
-          <h4>Stad</h4>
-          <h4>Postnummer</h4>
           <h4>Ta bort</h4>
         </div>
         <GetSecOwn />

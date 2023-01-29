@@ -18,10 +18,17 @@ export function LoggedInUser() {
   const url = process.env.REACT_APP_API;
 
   useEffect(() => {
-    axios.get(`${url}users/${ID}`).then((res) => {
-      console.log(res);
-      setUser(res.data);
-    });
+    // hämtar användare function
+    const getLocal = localStorage.getItem("OwnerID");
+    const LocalUser = JSON.parse(getLocal!);
+
+    if (LocalUser === ID) {
+      axios.get(`${url}users/${ID}`).then((res) => {
+        setUser(res.data);
+      });
+    } else {
+      window.location.href = "/";
+    }
   }, []);
 
   // ladda ner QR Koden

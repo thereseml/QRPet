@@ -18,6 +18,7 @@ import { LoggedInUser } from "./components/Login/loggedinUser";
 import { AdminLogin } from "./components/Admin/adminlogin";
 import { QRInfo } from "./components/QRInfo/QRInfo";
 import { LoggedinAdmin } from "./components/Admin/loggedinAdmin";
+import { GDPR } from "./components/gdpr";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -43,6 +44,7 @@ root.render(
           <Route path="adminlogin" element={<AdminLogin />} />
           <Route path="admin/:id/loggedinadmin" element={<LoggedinAdmin />} />
           <Route path="qrinfo/:id" element={<QRInfo />} />
+          <Route path="gdpr" element={<GDPR />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
