@@ -44,11 +44,9 @@ export function RegisterPets() {
         console.log(err);
       });
 
-    setTimeout(() => {
-      console.log("Ditt djur är nu registrerat!");
-      event.target.reset();
-      window.location.reload();
-    }, 1000);
+    // töm formuläret
+    event.target.reset();
+    window.location.reload();
   }
 
   function handleDone() {
@@ -119,7 +117,7 @@ export function RegisterPets() {
       </form>
 
       <div className="allPets">
-        <h4>Registrerade djur</h4>
+        <h4>Dina registrerade djur</h4>
         <div className="tableDiv">
           <h4>Namn</h4>
           <h4>Djurtyp</h4>

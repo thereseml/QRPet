@@ -50,19 +50,23 @@ h3 {
   align-items: center;
   margin: 20px;
 
+  h4 {
+    font-size: 20px;
+  }
+
   .tableDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 90vw;
 
     h4 {
-      font-size: 20px;
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       font-weight: 700;
-      width: 180px;
+      width: 100px;
       margin: 0px;
     }
   }

@@ -1,0 +1,45 @@
+.AdminDiv .allOwners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.AdminDiv .allOwners h4 {
+  font-size: 20px;
+}
+.AdminDiv .allOwners .tableDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+}
+.AdminDiv .allOwners .tableDiv h4 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  width: 100px;
+  margin: 0px;
+}
+.AdminDiv .allOwners .ownerDiv {
+  width: 90vw;
+}
+.AdminDiv .allOwners .ownerDiv p {
+  font-size: 10px;
+  width: 180px;
+  margin: 5px;
+}
+
+.adminLogin {
+  height: 80vh;
+}
+
+@media screen and (min-width: 768px) {
+  .AdminDiv .allOwners .tableDiv h4 {
+    font-size: 20px;
+  }
+  .AdminDiv .allOwners .ownerDiv p {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=admin.css.map */

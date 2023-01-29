@@ -1,12 +1,25 @@
 import axios from "axios";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import "./login.scss";
 
 export function UserLogin() {
+  // state för felmedelanden
+  const [wrongLogin, setWrongLogin] = useState(false);
+
   const [loginUser, SetAdminUser] = useState({
     useremail: "",
     password: "",
   });
+
+  useEffect(() => {
+    const getLocal = localStorage.getItem("OwnerID");
+    const localOwner = JSON.parse(getLocal!);
+
+    if (localOwner !== null) {
+      window.location.href = `/user/${localOwner}/userlogedin`;
+      return;
+    }
+  }, []);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     let name = e.target.name;
@@ -23,14 +36,20 @@ export function UserLogin() {
 
   function Login() {
     axios.post(`${url}users/login`, loginUser).then((res) => {
-      console.log(res);
       const ID = res.data.id;
+
+      if (res.data.status === "error") {
+        setWrongLogin(true);
+        return;
+      }
 
       // spara som inloggad
       localStorage.setItem("OwnerID", JSON.stringify(ID));
 
-      // skicka till nästa sida
-      window.location.href = `/user/${ID}/userlogedin`;
+      setTimeout(() => {
+        // skicka till nästa sida
+        window.location.href = `/user/${ID}/userlogedin`;
+      }, 100);
     });
   }
 
@@ -61,6 +80,7 @@ export function UserLogin() {
             Logga in
           </button>
         </form>
+        {wrongLogin && <div>Fel e-post eller lösenord!</div>}
       </div>
     </>
   );

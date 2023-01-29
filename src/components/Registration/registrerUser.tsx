@@ -59,17 +59,14 @@ export function RegisterUser() {
       setShowPassWordError(true);
       return;
     }
-
-    //kalla på postfunction med timer
-    setTimeout(() => {
-      postData();
-      event.target.reset();
-    }, 3000);
+    // kalla på post funktion
+    postData();
+    event.target.reset();
   }
 
   return (
     <>
-      <h3>Registrera dig & dina djur!</h3>
+      <h3>Registrera dig!</h3>
 
       <div>
         <form className="newUserForm" onSubmit={handleRegister}>

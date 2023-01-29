@@ -30,9 +30,9 @@ export function ShowSecondOwner(props: ISecOwn) {
           {props.firstname} {props.lastname}
         </p>
         <p>0{props.phone}</p>
-        <p>{props.address}</p>
-        <p>{props.city}</p>
-        <p>{props.zip}</p>
+        <p>
+          {props.address},<br /> {props.city}, {props.zip}
+        </p>
         <button type="button" onClick={handleDelete}>
           Ta bort
         </button>

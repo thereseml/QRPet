@@ -42,13 +42,18 @@
   align-items: center;
 
   .FAQitem {
-    width: 50vw;
+    width: 80vw;
     .questionDiv {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
+
+      h5 {
+        font-size: 15px;
+        font-weight: 600;
+      }
     }
 
     .anwser {
@@ -76,6 +81,16 @@
       .formDiv {
         textarea {
           width: 40vw;
+        }
+      }
+    }
+  }
+  .FAQ {
+    .FAQitem {
+      .questionDiv {
+        h5 {
+          font-size: 20px;
+          font-weight: 600;
         }
       }
     }

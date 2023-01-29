@@ -5,7 +5,6 @@ import { data } from "./QandA";
 export function Contact() {
   // state för visa/dölja svaren
   const [selected, setSelected] = useState(null);
-  const [showAnswer, setShowAnswer] = useState(false);
 
   const toggle = (i: any) => {
     if (selected === i) {
@@ -14,6 +13,7 @@ export function Contact() {
 
     setSelected(i);
   };
+
   return (
     <>
       <div className="contact">
@@ -40,7 +40,7 @@ export function Contact() {
           </div>
           <div className="formDiv">
             <label>E-post:</label>
-            <input type="text" placeholder="E-post.." />
+            <input type="text" name="email" placeholder="E-post.." />
           </div>
           <div className="formDiv">
             <label>Ämne:</label>
@@ -54,7 +54,7 @@ export function Contact() {
         </form>
       </div>
       <div className="FAQ">
-        <h4>Vanliga frågor</h4>
+        <h4>FAQ</h4>
         {data.map((item, i) => {
           return (
             <div key={i} className="FAQitem">
@@ -65,7 +65,7 @@ export function Contact() {
                 </button>
               </div>
               <div className={selected === i ? "anwser.show" : "anwser"}>
-                {item.answer}
+                <p>{item.answer}</p>
               </div>
             </div>
           );

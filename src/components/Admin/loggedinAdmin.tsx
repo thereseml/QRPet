@@ -5,7 +5,7 @@ import { IPetsId } from "../models/IPetsId";
 import { ISecOwn } from "../models/ISecOwn";
 import { ShowPet } from "../ShowPetAndOwner/showpet";
 import { ShowSecondOwner } from "../ShowPetAndOwner/showSecondOwner";
-import "../../index.scss";
+import "./admin.scss";
 
 export function LoggedinAdmin() {
   // state för alla djuren som hämtas/registreras
@@ -24,6 +24,15 @@ export function LoggedinAdmin() {
 
   // hämta alla ägare
   useEffect(() => {
+    const getLocal = localStorage.getItem("AdminID");
+    const localAdmin = JSON.parse(getLocal!);
+
+    if (localAdmin === null) {
+      window.location.href = "/adminlogin";
+
+      return;
+    }
+
     axios.get(`${url}users`).then((res) => {
       setAllOwners(res.data);
     });
@@ -33,26 +42,19 @@ export function LoggedinAdmin() {
   function handlePets(props: string) {
     let id = props;
 
-    console.log(id);
-
-    setTimeout(() => {
-      axios.get<IPetsId[]>(`${url}pets/owner/${id}`).then((res) => {
-        setPets(res.data);
-        console.log(res.data);
-      });
-    }, 500);
+    axios.get<IPetsId[]>(`${url}pets/owner/${id}`).then((res) => {
+      setPets(res.data);
+      console.log(res.data);
+    });
   }
 
   function handleSecOwn(props: string) {
     let id = props;
-    console.log(id);
 
-    setTimeout(() => {
-      axios.get<ISecOwn[]>(`${url}secondOwner/owner/${id}`).then((res) => {
-        setSecondOwners(res.data);
-        console.log(res.data);
-      });
-    }, 500);
+    axios.get<ISecOwn[]>(`${url}secondOwner/owner/${id}`).then((res) => {
+      setSecondOwners(res.data);
+      console.log(res.data);
+    });
   }
 
   const togglePets = (i: any) => {
@@ -73,6 +75,7 @@ export function LoggedinAdmin() {
     await axios.delete(`${url}users/${ID}`).then((res) => {
       console.log(res.data);
     });
+
     // ta bort djur med ägarens ID
     await axios.delete(`${url}pets/owner/${ID}`).then((res) => {
       console.log(res.data);
@@ -83,9 +86,7 @@ export function LoggedinAdmin() {
       console.log(res.data);
     });
 
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
+    window.location.reload();
   }
 
   return (
@@ -96,14 +97,10 @@ export function LoggedinAdmin() {
         <div className="allOwners">
           <h2>Registrerade användare</h2>
           <div className="tableDiv">
-            <h4>Id</h4>
-            <h4>Förnamn</h4>
-            <h4>Efternman</h4>
+            <h4>Namn</h4>
             <h4>Telefon</h4>
             <h4>E-post</h4>
             <h4>Adress</h4>
-            <h4>Postnummer</h4>
-            <h4>Ort</h4>
             <h4>Djur</h4>
             <h4>Extra ägare</h4>
             <h4>Ta bort</h4>
@@ -112,14 +109,14 @@ export function LoggedinAdmin() {
             return (
               <>
                 <div className="ownerDiv" key={i}>
-                  <p className="ownerID">{owner._id}</p>
-                  <p>{owner.firstname}</p>
-                  <p>{owner.lastname}</p>
+                  <p>
+                    {owner.firstname} {owner.lastname}
+                  </p>
                   <p>0{owner.phone}</p>
                   <p>{owner.useremail}</p>
-                  <p>{owner.address}</p>
-                  <p>{owner.zip}</p>
-                  <p>{owner.city}</p>
+                  <p>
+                    {owner.address}, <br /> {owner.zip}, {owner.city}
+                  </p>
                   <button
                     onClick={() => {
                       togglePets(i);
