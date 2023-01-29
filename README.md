@@ -16,6 +16,6 @@ This is my degree project at Medieinstitutet. It's a webpage where you can regis
 
 Clone the repo, install it with "npm install", and then type "npm start" to run the application on localhost.
 
-# !
+## Note!
 
 This is a prototyp and sould not be used.
