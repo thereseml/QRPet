@@ -101,6 +101,38 @@ input {
   color: #fff;
 }
 
+.gdpr,
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+.gdpr .gdprInfo,
+.notFound .gdprInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 60vw;
+}
+
+.DeleteDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: 50vw;
+}
+.DeleteDiv .deleteCheckBox {
+  width: 20px;
+}
+
+.ErrorMsg {
+  text-align: center;
+}
+
 @media screen and (min-width: 720px) {
   label {
     font-size: 20px;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { INewUser } from "../models/INewUser";
 
 export function EditUser(user: any) {
@@ -24,7 +24,7 @@ export function EditUser(user: any) {
   // api key
   const url = process.env.REACT_APP_API;
 
-  const handleEditUser = (e: any) => {
+  async function handleEditUser(e: any) {
     e.preventDefault();
 
     // kolla om email är korrekt
@@ -44,14 +44,14 @@ export function EditUser(user: any) {
       "Content-Type": "application/json",
     };
 
-    axios
+    await axios
       .put(`${url}users/update/${user._id}`, newUser, { headers })
       .then((res) => {
         console.log(res.data);
       });
 
     window.location.reload();
-  };
+  }
 
   return (
     <>

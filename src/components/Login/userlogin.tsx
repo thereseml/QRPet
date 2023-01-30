@@ -78,7 +78,9 @@ export function UserLogin() {
             Logga in
           </button>
         </form>
-        {wrongLogin && <div>Fel e-post eller lösenord!</div>}
+        {wrongLogin && (
+          <div className="ErrorMsg">Fel e-post eller lösenord!</div>
+        )}
       </div>
     </>
   );

@@ -1,8 +1,13 @@
 import axios from "axios";
+import { useState } from "react";
+import { EditPet } from "../Edit/editpet";
 import { IPetsId } from "../models/IPetsId";
 import "./showpet.scss";
 
 export function ShowPet(props: IPetsId) {
+  // state för visa redigera djur
+  const [showEditPet, setShowEditPet] = useState(false);
+
   // api key
   const url = process.env.REACT_APP_API;
 
@@ -22,6 +27,9 @@ export function ShowPet(props: IPetsId) {
       window.location.reload();
     }, 500);
   }
+  function handleEditBtn() {
+    setShowEditPet(!showEditPet);
+  }
 
   return (
     <>
@@ -31,10 +39,14 @@ export function ShowPet(props: IPetsId) {
         <p>{props.breed}</p>
         <p>{props.color}</p>
         <p>{props.details}</p>
+        <button type="button" onClick={handleEditBtn}>
+          Ändra
+        </button>
         <button type="button" onClick={handleDelete}>
           Ta bort
         </button>
       </li>
+      {showEditPet && <EditPet {...props} />}
     </>
   );
 }
