@@ -13,7 +13,6 @@ export function Layout() {
   const [registerBtn, setRegisterBtn] = useState(true);
   const [mypage, setMyPage] = useState(false);
   const [adminLogin, setAdminLogin] = useState(false);
-  const [noAdmin, setNoAdmin] = useState(true);
 
   // kolla om konto redan finns
   const ls = JSON.parse(localStorage.getItem("OwnerID") || "null");
@@ -28,18 +27,20 @@ export function Layout() {
       setLogoutBtn(true);
       setRegisterBtn(false);
       setMyPage(true);
+      setAlert(false);
     } else {
       setLoginBtn(true);
       setLogoutBtn(false);
       setRegisterBtn(true);
       setMyPage(false);
+      setAlert(true);
     }
     if (als) {
       setAdminLogin(true);
-      setNoAdmin(false);
+      setAlert(false);
     } else {
       setAdminLogin(false);
-      setNoAdmin(true);
+      setAlert(true);
     }
   }, [ls]);
 
@@ -56,11 +57,11 @@ export function Layout() {
 
   function handleAdminLogout() {
     setAdminLogin(false);
-    setNoAdmin(true);
 
     localStorage.clear();
   }
 
+  // alert state och function
   const [alert, setAlert] = useState(true);
 
   function handleX() {
