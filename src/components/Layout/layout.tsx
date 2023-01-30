@@ -13,6 +13,8 @@ export function Layout() {
   const [registerBtn, setRegisterBtn] = useState(true);
   const [mypage, setMyPage] = useState(false);
   const [adminLogin, setAdminLogin] = useState(false);
+  // alert state och function
+  const [alert, setAlert] = useState(true);
 
   // kolla om konto redan finns
   const ls = JSON.parse(localStorage.getItem("OwnerID") || "null");
@@ -60,9 +62,6 @@ export function Layout() {
 
     localStorage.clear();
   }
-
-  // alert state och function
-  const [alert, setAlert] = useState(true);
 
   function handleX() {
     setAlert(false);

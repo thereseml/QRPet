@@ -46,10 +46,8 @@ export function UserLogin() {
       // spara som inloggad
       localStorage.setItem("OwnerID", JSON.stringify(ID));
 
-      setTimeout(() => {
-        // skicka till nästa sida
-        window.location.href = `/user/${ID}/userlogedin`;
-      }, 100);
+      // skicka till nästa sida
+      window.location.href = `/user/${ID}/userlogedin`;
     });
   }
 
