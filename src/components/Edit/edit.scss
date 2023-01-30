@@ -1,0 +1,25 @@
+.changePetDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin: 10px 0px;
+
+  .changePetForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .changePetDiv {
+    .changePetForm {
+      flex-direction: column;
+      width: 40vw;
+    }
+  }
+}
