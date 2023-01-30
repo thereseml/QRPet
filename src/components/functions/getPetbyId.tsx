@@ -26,7 +26,7 @@ export function GetPetById() {
   let showAllPets = allpets.map((pet, i) => {
     return (
       <>
-        <ShowPet key={pet._id} {...pet} />
+        <ShowPet key={i} {...pet} />
       </>
     );
   });

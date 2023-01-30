@@ -23,10 +23,10 @@ export function GetSecOwn() {
   }, []);
 
   // skapar lista för alla second owners
-  let showAllSecondOwners = allSecondOwners.map((secondOwner) => {
+  let showAllSecondOwners = allSecondOwners.map((secondOwner, i) => {
     return (
       <>
-        <ShowSecondOwner key={secondOwner._id} {...secondOwner} />
+        <ShowSecondOwner key={i} {...secondOwner} />
       </>
     );
   });

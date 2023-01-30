@@ -6,13 +6,18 @@ import { GetSecOwn } from "../functions/getSecOwn";
 import { INewUser } from "../models/INewUser";
 import { QRCodeCanvas } from "qrcode.react";
 import "./login.scss";
+import { EditUser } from "../Edit/edituser";
+import { DeleteUser } from "../Edit/deleteuser";
 
 export function LoggedInUser() {
   // hämta id från url
   const userId = useParams();
   let ID = userId.id;
 
+  // state för användare och för visa/dölja
   const [user, setUser] = useState<INewUser>();
+  const [showEditUser, setShowEditUser] = useState(false);
+  const [showDeleteUser, setShowDeleteUser] = useState(false);
 
   // api key
   const url = process.env.REACT_APP_API;
@@ -57,6 +62,12 @@ export function LoggedInUser() {
             <p>
               Adress: {user?.address}, {user?.city} {user?.zip}
             </p>
+            <button onClick={() => setShowEditUser(!showEditUser)}>
+              Ändra
+            </button>
+            <button onClick={() => setShowDeleteUser(!showDeleteUser)}>
+              Ta bort
+            </button>
           </div>
           <div className="QRDiv">
             <h5>Din QR Kod:</h5>
@@ -74,6 +85,8 @@ export function LoggedInUser() {
             </button>
           </div>
         </div>
+        {showEditUser && <EditUser {...user} />}
+        {showDeleteUser && <DeleteUser />}
         <div className="PetDiv">
           <h5>Dina djur:</h5>
           <GetPetById />
