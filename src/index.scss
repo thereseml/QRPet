@@ -134,6 +134,18 @@ input {
   }
 }
 
+.DeleteDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: 50vw;
+
+  .deleteCheckBox {
+    width: 20px;
+  }
+}
+
 // tablet
 @media screen and (min-width: 720px) {
   label {

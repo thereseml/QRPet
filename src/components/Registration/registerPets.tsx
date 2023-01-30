@@ -23,6 +23,9 @@ export function RegisterPets() {
     ownerId: ID,
   });
 
+  // state för att visa alla djur
+  const [showPets, setShowPets] = useState(false);
+
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     let name = e.target.name;
     setNewPet({ ...newPet, [name]: e.target.value });
@@ -46,7 +49,7 @@ export function RegisterPets() {
 
     // töm formuläret
     event.target.reset();
-    window.location.reload();
+    setShowPets(true);
   }
 
   function handleDone() {
@@ -115,19 +118,20 @@ export function RegisterPets() {
         </div>
         <button type="submit">Lägg till djur</button>
       </form>
-
-      <div className="allPets">
-        <h4>Dina registrerade djur</h4>
-        <div className="tableDiv">
-          <h4>Namn</h4>
-          <h4>Djurtyp</h4>
-          <h4>Ras</h4>
-          <h4>Färg</h4>
-          <h4>Övriga detaljer</h4>
-          <h4>Ta bort</h4>
+      {showPets && (
+        <div className="allPets">
+          <h4>Dina registrerade djur</h4>
+          <div className="tableDiv">
+            <h4>Namn</h4>
+            <h4>Djurtyp</h4>
+            <h4>Ras</h4>
+            <h4>Färg</h4>
+            <h4>Övriga detaljer</h4>
+            <h4>Ta bort</h4>
+          </div>
+          <GetPetById />
         </div>
-        <GetPetById />
-      </div>
+      )}
       <div className="doneButton">
         <button type="button" onClick={handleDone}>
           Klar
