@@ -17,6 +17,25 @@ h3 {
     flex-direction: column;
     margin: 10px;
   }
+
+  .gdprDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+
+    label {
+      font-size: 12px;
+
+      a {
+        color: black;
+      }
+    }
+
+    input {
+      width: 15px;
+    }
+  }
 }
 
 .formDivType {

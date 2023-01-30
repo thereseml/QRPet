@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
+import { Link } from "react-router-dom";
 import { INewUser } from "../models/INewUser";
 import "./Registration.scss";
 
@@ -7,6 +8,7 @@ export function RegisterUser() {
   // state för felmedelanden
   const [showEmailError, setShowEmailError] = useState(false);
   const [showPassWordError, setShowPassWordError] = useState(false);
+  const [changeButton, setChangeButton] = useState(true);
 
   // state för att spara in data från formuläret
   const [newUser, setNewUser] = useState<INewUser>({
@@ -43,6 +45,15 @@ export function RegisterUser() {
 
     // skicka till nästa sida
     window.location.href = `/user/${ID}`;
+  }
+
+  // funktion för att hantera gdpr
+  function handleGDPR(e: ChangeEvent<HTMLInputElement>) {
+    if (e.target.checked) {
+      setChangeButton(false);
+    } else {
+      setChangeButton(true);
+    }
   }
 
   // funktion för att hantera knappen registrera
@@ -142,7 +153,16 @@ export function RegisterUser() {
               placeholder="Postnummer.."
             />
           </div>
-          <button type="submit">Registrera</button>
+          <div className="gdprDiv">
+            <input type="checkbox" onChange={handleGDPR} />
+            <label>
+              Jag godkänner lagring av mina personuppgifter. Läs mer{" "}
+              <Link to="/gdpr">här</Link>.
+            </label>
+          </div>
+          <button type="submit" disabled={changeButton}>
+            Registrera
+          </button>
         </form>
         {showEmailError && (
           <div className="ErrorMsg">Vänligen ange en giltlig e-post!</div>
