@@ -3,32 +3,12 @@ import phoneSite from "../../img/PhoneSite.png";
 import "./about.scss";
 
 export function About({}) {
-  // state för ändra h1s position
-  const [hideh1, setHideH1] = useState(true);
-  const [showh1, setShowH1] = useState(false);
-
-  useEffect(() => {
-    // när sidan ändras storlek
-    if (window.innerWidth > 1024) {
-      setHideH1(false);
-      setShowH1(true);
-
-      return;
-    }
-  }, []);
-
   return (
     <div className="siteInfo">
-      {hideh1 && (
-        <h1>
-          Genom att använda vår hemsida för att registrera ditt husdjur och dess
-          kontaktuppgifter, får du många fördelar:
-        </h1>
-      )}
       <div className="sidebysideHome">
         <img className="phoneImg" src={phoneSite} />
         <div className="textDiv">
-          {showh1 && <h1>Vad är QR Pet?</h1>}
+          <h1>Vad är QR Pet?</h1>
           <p>
             Vår hemsida är ett verktyg för djurägare att registrera deras
             husdjur och kontaktinformation för att hjälpa till att återförena
@@ -43,7 +23,6 @@ export function About({}) {
           </p>
         </div>
       </div>
-      <hr />
     </div>
   );
 }

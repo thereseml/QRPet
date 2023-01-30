@@ -1,8 +1,13 @@
 import axios from "axios";
+import { useState } from "react";
+import { EditSecOwn } from "../Edit/editsecown";
 import { ISecOwn } from "../models/ISecOwn";
 import "./showpet.scss";
 
 export function ShowSecondOwner(props: ISecOwn) {
+  // state för visa redigera extra ägare
+  const [showSecOwnEdit, setShowSecOwnEdit] = useState(false);
+
   // api key
   const url = process.env.REACT_APP_API;
 
@@ -23,6 +28,10 @@ export function ShowSecondOwner(props: ISecOwn) {
     }, 500);
   }
 
+  function handleEdit() {
+    setShowSecOwnEdit(!showSecOwnEdit);
+  }
+
   return (
     <>
       <div className="secondOwnerDiv" key={props._id}>
@@ -33,10 +42,14 @@ export function ShowSecondOwner(props: ISecOwn) {
         <p>
           {props.address},<br /> {props.city}, {props.zip}
         </p>
+        <button type="button" onClick={handleEdit}>
+          Ändra
+        </button>
         <button type="button" onClick={handleDelete}>
           Ta bort
         </button>
       </div>
+      {showSecOwnEdit && <EditSecOwn {...props} />}
     </>
   );
 }

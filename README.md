@@ -18,4 +18,4 @@ Clone the repo, install it with "npm install", and then type "npm start" to run 
 
 ## Note!
 
-This is a prototyp and sould not be used.
+This is a prototype and should not be used.

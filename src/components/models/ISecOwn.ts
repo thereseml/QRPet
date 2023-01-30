@@ -2,9 +2,9 @@ export interface ISecOwn {
   _id: string;
   firstname: string;
   lastname: string;
-  phone: string;
+  phone: number;
   address: string;
   city: string;
-  zip: string;
+  zip: number;
   ownerId: string;
 }
