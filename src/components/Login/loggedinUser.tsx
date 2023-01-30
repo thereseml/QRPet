@@ -68,6 +68,7 @@ export function LoggedInUser() {
             <button onClick={() => setShowDeleteUser(!showDeleteUser)}>
               Ta bort
             </button>
+            {showDeleteUser && <DeleteUser />}
           </div>
           <div className="QRDiv">
             <h5>Din QR Kod:</h5>
@@ -86,7 +87,6 @@ export function LoggedInUser() {
           </div>
         </div>
         {showEditUser && <EditUser {...user} />}
-        {showDeleteUser && <DeleteUser />}
         <div className="PetDiv">
           <h5>Dina djur:</h5>
           <GetPetById />

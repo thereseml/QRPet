@@ -23,6 +23,9 @@ export function RegisterSecondOwner() {
     ownerId: ID,
   });
 
+  // state för att visa alla ägare
+  const [showSecOwn, setShowSecOwn] = useState(false);
+
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     let name = e.target.name;
     setNewSecondOwner({ ...newSecondOwner, [name]: e.target.value });
@@ -48,7 +51,7 @@ export function RegisterSecondOwner() {
 
     // töm formuläret
     event.target.reset();
-    window.location.reload();
+    setShowSecOwn(true);
   }
 
   function handleDone() {
@@ -118,17 +121,18 @@ export function RegisterSecondOwner() {
         </div>
         <button type="submit">Lägg till ägare</button>
       </form>
-
-      <div className="allSecondOwners">
-        <h4>Dina registrerade ägare</h4>
-        <div className="tableDiv">
-          <h4>Namn</h4>
-          <h4>Telefon</h4>
-          <h4>Adress</h4>
-          <h4>Ta bort</h4>
+      {showSecOwn && (
+        <div className="allSecondOwners">
+          <h4>Dina registrerade ägare</h4>
+          <div className="tableDiv">
+            <h4>Namn</h4>
+            <h4>Telefon</h4>
+            <h4>Adress</h4>
+            <h4>Ta bort</h4>
+          </div>
+          <GetSecOwn />
         </div>
-        <GetSecOwn />
-      </div>
+      )}
       <div className="doneButton">
         <button type="button" onClick={handleDone}>
           Klar

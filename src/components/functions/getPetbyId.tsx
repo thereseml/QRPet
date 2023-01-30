@@ -20,7 +20,7 @@ export function GetPetById() {
     axios.get<IPetsId[]>(`${url}pets/owner/${ID}`).then((res) => {
       setAllPets([...res.data]);
     });
-  }, []);
+  }, [GetPetById]);
 
   // skapar lista för alla registrerade djur
   let showAllPets = allpets.map((pet, i) => {

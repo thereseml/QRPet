@@ -20,7 +20,7 @@ export function GetSecOwn() {
     axios.get<ISecOwn[]>(`${url}secondOwner/owner/${ID}`).then((res) => {
       setAllSecondOwners(res.data);
     });
-  }, []);
+  }, [GetSecOwn]);
 
   // skapar lista för alla second owners
   let showAllSecondOwners = allSecondOwners.map((secondOwner, i) => {
