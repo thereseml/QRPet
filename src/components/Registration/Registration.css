@@ -101,6 +101,34 @@ input {
   color: #fff;
 }
 
+.gdpr,
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+.gdpr .gdprInfo,
+.notFound .gdprInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 60vw;
+}
+
+.DeleteDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: 50vw;
+}
+.DeleteDiv .deleteCheckBox {
+  width: 20px;
+}
+
 @media screen and (min-width: 720px) {
   label {
     font-size: 20px;
@@ -164,6 +192,29 @@ h3 {
   display: flex;
   flex-direction: column;
   margin: 10px;
+}
+.newUserForm .gdprDiv,
+.newPetForm .gdprDiv,
+.secondOwnerForm .gdprDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+}
+.newUserForm .gdprDiv label,
+.newPetForm .gdprDiv label,
+.secondOwnerForm .gdprDiv label {
+  font-size: 12px;
+}
+.newUserForm .gdprDiv label a,
+.newPetForm .gdprDiv label a,
+.secondOwnerForm .gdprDiv label a {
+  color: black;
+}
+.newUserForm .gdprDiv input,
+.newPetForm .gdprDiv input,
+.secondOwnerForm .gdprDiv input {
+  width: 15px;
 }
 
 .formDivType {
