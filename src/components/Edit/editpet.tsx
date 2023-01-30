@@ -22,7 +22,7 @@ export function EditPet(pet: IPetsId) {
   const url = process.env.REACT_APP_API;
 
   // funktion för att ändra ett djur
-  async function handleEditPet(e: any) {
+  async function handleEditPet(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     //headers att skicka med
     const headers = {

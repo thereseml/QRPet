@@ -1,17 +1,33 @@
-.changePetDiv {
+.changePetDiv,
+.changeSecOwnDiv {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 90vw;
   margin: 10px 0px;
 }
-.changePetDiv .changePetForm {
+.changePetDiv .changePetForm,
+.changePetDiv .changeSecOwnForm,
+.changeSecOwnDiv .changePetForm,
+.changeSecOwnDiv .changeSecOwnForm {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 80vw;
+  width: 50vw;
+}
+.changePetDiv .changePetForm label,
+.changePetDiv .changeSecOwnForm label,
+.changeSecOwnDiv .changePetForm label,
+.changeSecOwnDiv .changeSecOwnForm label {
+  font-size: 12px;
+}
+.changePetDiv .changePetForm input,
+.changePetDiv .changeSecOwnForm input,
+.changeSecOwnDiv .changePetForm input,
+.changeSecOwnDiv .changeSecOwnForm input {
+  margin: 0px 10px;
+  width: 150px;
 }
 
 @media screen and (max-width: 768px) {

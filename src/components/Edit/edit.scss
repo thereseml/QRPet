@@ -1,17 +1,26 @@
-.changePetDiv {
+.changePetDiv,
+.changeSecOwnDiv {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 90vw;
   margin: 10px 0px;
 
-  .changePetForm {
+  .changePetForm,
+  .changeSecOwnForm {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 80vw;
+    width: 50vw;
+
+    label {
+      font-size: 12px;
+    }
+    input {
+      margin: 0px 10px;
+      width: 150px;
+    }
   }
 }
 
