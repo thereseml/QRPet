@@ -1,1 +1,13 @@
 @import "../../index.scss";
+
+.siteInfo {
+  display: flex;
+  align-items: center;
+
+  .phoneImg {
+    width: 40vw;
+  }
+  .textDiv {
+    width: 60vw;
+  }
+}

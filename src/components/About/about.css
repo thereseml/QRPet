@@ -177,4 +177,14 @@ input {
   .footerOne {
     padding-bottom: 10px;
   }
+}
+.siteInfo {
+  display: flex;
+  align-items: center;
+}
+.siteInfo .phoneImg {
+  width: 40vw;
+}
+.siteInfo .textDiv {
+  width: 60vw;
 }/*# sourceMappingURL=about.css.map */
