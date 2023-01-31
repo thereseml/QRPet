@@ -7,28 +7,32 @@
 .AdminDiv .allOwners h4 {
   font-size: 20px;
 }
-.AdminDiv .allOwners .tableDiv {
+.AdminDiv .allOwners .tableDivOwner {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 90vw;
 }
-.AdminDiv .allOwners .tableDiv h4 {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  width: 100px;
-  margin: 0px;
+.AdminDiv .allOwners .tableDivOwner p {
+  font-size: 15px;
+  font-weight: bold;
+}
+.AdminDiv .allOwners .tableDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+}
+.AdminDiv .allOwners .tableDiv p {
+  font-size: 12px;
+  font-weight: bold;
 }
 .AdminDiv .allOwners .ownerDiv {
   width: 90vw;
 }
 .AdminDiv .allOwners .ownerDiv p {
   font-size: 10px;
-  width: 180px;
-  margin: 5px;
+  width: 140px;
 }
 
 .adminLogin {
@@ -36,10 +40,10 @@
 }
 
 @media screen and (min-width: 768px) {
-  .AdminDiv .allOwners .tableDiv h4 {
+  .AdminDiv .allOwners .tableDiv p {
     font-size: 20px;
   }
   .AdminDiv .allOwners .ownerDiv p {
-    font-size: 18px;
+    font-size: 15px;
   }
 }/*# sourceMappingURL=admin.css.map */

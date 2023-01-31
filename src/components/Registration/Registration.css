@@ -129,6 +129,10 @@ input {
   width: 20px;
 }
 
+.ErrorMsg {
+  text-align: center;
+}
+
 @media screen and (min-width: 720px) {
   label {
     font-size: 20px;
@@ -221,7 +225,7 @@ h3 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 90vw;
+  width: 80vw;
 }
 .formDivType .RadioInput {
   display: flex;
@@ -253,19 +257,14 @@ h3 {
 .allPets .tableDiv,
 .allSecondOwners .tableDiv {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 90vw;
+  width: 80vw;
 }
-.allPets .tableDiv h4,
-.allSecondOwners .tableDiv h4 {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  width: 100px;
-  margin: 0px;
+.allPets .tableDiv p,
+.allSecondOwners .tableDiv p {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .doneButton {

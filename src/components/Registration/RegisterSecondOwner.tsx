@@ -23,22 +23,19 @@ export function RegisterSecondOwner() {
     ownerId: ID,
   });
 
-  // state för att visa alla ägare
-  const [showSecOwn, setShowSecOwn] = useState(false);
-
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     let name = e.target.name;
     setNewSecondOwner({ ...newSecondOwner, [name]: e.target.value });
   }
 
-  function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
+  async function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     //headers att skicka med
     const headers = {
       "Content-Type": "application/json",
     };
 
-    axios
+    await axios
       .post(`${url}secondOwner/add`, newSecondOwner, {
         headers,
       })
@@ -51,7 +48,7 @@ export function RegisterSecondOwner() {
 
     // töm formuläret
     event.target.reset();
-    setShowSecOwn(true);
+    window.location.reload();
   }
 
   function handleDone() {
@@ -121,18 +118,17 @@ export function RegisterSecondOwner() {
         </div>
         <button type="submit">Lägg till ägare</button>
       </form>
-      {showSecOwn && (
-        <div className="allSecondOwners">
-          <h4>Dina registrerade ägare</h4>
-          <div className="tableDiv">
-            <h4>Namn</h4>
-            <h4>Telefon</h4>
-            <h4>Adress</h4>
-            <h4>Ta bort</h4>
-          </div>
-          <GetSecOwn />
+      <div className="allSecondOwners">
+        <h4>Dina registrerade ägare</h4>
+        <div className="tableDiv">
+          <p>Namn</p>
+          <p>Telefon</p>
+          <p>Adress</p>
+          <p>Ändra</p>
+          <p>Ta bort</p>
         </div>
-      )}
+        <GetSecOwn />
+      </div>
       <div className="doneButton">
         <button type="button" onClick={handleDone}>
           Klar

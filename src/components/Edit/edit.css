@@ -1,38 +1,25 @@
-.changePetDiv,
-.changeSecOwnDiv {
+.changeSecOwnForm,
+.changePetForm {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0px;
 }
-.changePetDiv .changePetForm,
-.changePetDiv .changeSecOwnForm,
-.changeSecOwnDiv .changePetForm,
-.changeSecOwnDiv .changeSecOwnForm {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 50vw;
-}
-.changePetDiv .changePetForm label,
-.changePetDiv .changeSecOwnForm label,
-.changeSecOwnDiv .changePetForm label,
-.changeSecOwnDiv .changeSecOwnForm label {
+.changeSecOwnForm label,
+.changePetForm label {
   font-size: 12px;
 }
-.changePetDiv .changePetForm input,
-.changePetDiv .changeSecOwnForm input,
-.changeSecOwnDiv .changePetForm input,
-.changeSecOwnDiv .changeSecOwnForm input {
-  margin: 0px 10px;
+.changeSecOwnForm input,
+.changePetForm input {
   width: 150px;
+  height: 25px;
 }
 
 @media screen and (max-width: 768px) {
-  .changePetDiv .changePetForm {
+  .changePetForm,
+.changeSecOwnForm {
     flex-direction: column;
-    width: 40vw;
+    align-items: center;
+    width: 80vw;
+    margin: 20px;
   }
 }/*# sourceMappingURL=edit.css.map */

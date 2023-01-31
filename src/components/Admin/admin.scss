@@ -9,28 +9,35 @@
       font-size: 20px;
     }
 
-    .tableDiv {
+    .tableDivOwner {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: space-between;
       width: 90vw;
 
-      h4 {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 700;
-        width: 100px;
-        margin: 0px;
+      p {
+        font-size: 15px;
+        font-weight: bold;
       }
     }
+
+    .tableDiv {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80vw;
+
+      p {
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+
     .ownerDiv {
       width: 90vw;
       p {
         font-size: 10px;
-        width: 180px;
-        margin: 5px;
+        width: 140px;
       }
     }
   }
@@ -43,13 +50,13 @@
   .AdminDiv {
     .allOwners {
       .tableDiv {
-        h4 {
+        p {
           font-size: 20px;
         }
       }
       .ownerDiv {
         p {
-          font-size: 18px;
+          font-size: 15px;
         }
       }
     }

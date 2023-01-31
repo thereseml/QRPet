@@ -28,14 +28,14 @@ export function RegisterPets() {
     setNewPet({ ...newPet, [name]: e.target.value });
   }
 
-  function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
+  async function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     //headers att skicka med
     const headers = {
       "Content-Type": "application/json",
     };
     // posta data till backend
-    axios
+    await axios
       .post(`${url}pets/add`, newPet, { headers })
       .then((res) => {
         console.log(res);
@@ -46,6 +46,8 @@ export function RegisterPets() {
 
     // töm formuläret
     event.target.reset();
+    // uppdatera sidan
+    window.location.reload();
   }
 
   function handleDone() {
@@ -117,12 +119,13 @@ export function RegisterPets() {
       <div className="allPets">
         <h4>Dina registrerade djur</h4>
         <div className="tableDiv">
-          <h4>Namn</h4>
-          <h4>Djurtyp</h4>
-          <h4>Ras</h4>
-          <h4>Färg</h4>
-          <h4>Övriga detaljer</h4>
-          <h4>Ta bort</h4>
+          <p>Namn</p>
+          <p>Djurtyp</p>
+          <p>Ras</p>
+          <p>Färg</p>
+          <p>Övriga detaljer</p>
+          <p>Ändra</p>
+          <p>Ta bort</p>
         </div>
         <GetPetById />
       </div>
