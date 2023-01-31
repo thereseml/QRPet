@@ -96,14 +96,14 @@ export function LoggedinAdmin() {
 
         <div className="allOwners">
           <h2>Registrerade användare</h2>
-          <div className="tableDiv">
-            <h4>Namn</h4>
-            <h4>Telefon</h4>
-            <h4>E-post</h4>
-            <h4>Adress</h4>
-            <h4>Djur</h4>
-            <h4>Extra ägare</h4>
-            <h4>Ta bort</h4>
+          <div className="tableDivOwner">
+            <p>Namn</p>
+            <p>Telefon</p>
+            <p>E-post</p>
+            <p>Adress</p>
+            <p>Djur</p>
+            <p>Extra ägare</p>
+            <p>Ta bort</p>
           </div>
           {allOwners.map((owner, i) => {
             return (
@@ -140,12 +140,13 @@ export function LoggedinAdmin() {
                 >
                   {pets.length > 0 && (
                     <div className="tableDiv">
-                      <h4>Namn</h4>
-                      <h4>Djurtyp</h4>
-                      <h4>Ras</h4>
-                      <h4>Färg</h4>
-                      <h4>Övriga detaljer</h4>
-                      <h4>Ta bort</h4>
+                      <p>Namn</p>
+                      <p>Djurtyp</p>
+                      <p>Ras</p>
+                      <p>Färg</p>
+                      <p>Övriga detaljer</p>
+                      <p>Ändra</p>
+                      <p>Ta bort</p>
                     </div>
                   )}
                   <div className="OwnersPets">
@@ -159,12 +160,11 @@ export function LoggedinAdmin() {
                 >
                   {SecondOwners.length > 0 && (
                     <div className="tableDiv">
-                      <h4>Namn</h4>
-                      <h4>Telefon</h4>
-                      <h4>Adress</h4>
-                      <h4>Stad</h4>
-                      <h4>Postnummer</h4>
-                      <h4>Ta bort</h4>
+                      <p>Namn</p>
+                      <p>Telefon</p>
+                      <p>Adress</p>
+                      <p>Ändra</p>
+                      <p>Ta bort</p>
                     </div>
                   )}
                   <div className="OwnersPets">

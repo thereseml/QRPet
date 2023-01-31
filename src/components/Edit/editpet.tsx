@@ -40,51 +40,49 @@ export function EditPet(pet: IPetsId) {
 
   return (
     <>
-      <div className="changePetDiv">
-        <form className="changePetForm" onSubmit={handleEditPet}>
-          <label>Namn</label>
-          <input
-            type="text"
-            value={newPet.name}
-            onChange={(e) => {
-              setNewPet({ ...newPet, name: e.target.value });
-            }}
-          />
-          <label>Djurtyp</label>
-          <input
-            type="text"
-            value={newPet.petType}
-            onChange={(e) => {
-              setNewPet({ ...newPet, petType: e.target.value });
-            }}
-          />
-          <label>Ras</label>
-          <input
-            type="text"
-            value={newPet.breed}
-            onChange={(e) => {
-              setNewPet({ ...newPet, breed: e.target.value });
-            }}
-          />
-          <label>Färg</label>
-          <input
-            type="text"
-            value={newPet.color}
-            onChange={(e) => {
-              setNewPet({ ...newPet, color: e.target.value });
-            }}
-          />
-          <label>Övrigt</label>
-          <input
-            type="text"
-            value={newPet.details}
-            onChange={(e) => {
-              setNewPet({ ...newPet, details: e.target.value });
-            }}
-          />
-          <button type="submit">Ändra</button>
-        </form>
-      </div>
+      <form className="changePetForm" onSubmit={handleEditPet}>
+        <label>Namn</label>
+        <input
+          type="text"
+          value={newPet.name}
+          onChange={(e) => {
+            setNewPet({ ...newPet, name: e.target.value });
+          }}
+        />
+        <label>Djurtyp</label>
+        <input
+          type="text"
+          value={newPet.petType}
+          onChange={(e) => {
+            setNewPet({ ...newPet, petType: e.target.value });
+          }}
+        />
+        <label>Ras</label>
+        <input
+          type="text"
+          value={newPet.breed}
+          onChange={(e) => {
+            setNewPet({ ...newPet, breed: e.target.value });
+          }}
+        />
+        <label>Färg</label>
+        <input
+          type="text"
+          value={newPet.color}
+          onChange={(e) => {
+            setNewPet({ ...newPet, color: e.target.value });
+          }}
+        />
+        <label>Övrigt</label>
+        <input
+          type="text"
+          value={newPet.details}
+          onChange={(e) => {
+            setNewPet({ ...newPet, details: e.target.value });
+          }}
+        />
+        <button type="submit">Ändra</button>
+      </form>
     </>
   );
 }

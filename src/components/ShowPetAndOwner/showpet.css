@@ -129,6 +129,10 @@ input {
   width: 20px;
 }
 
+.ErrorMsg {
+  text-align: center;
+}
+
 @media screen and (min-width: 720px) {
   label {
     font-size: 20px;
@@ -176,12 +180,10 @@ input {
 }
 .petsDiv,
 .secondOwnerDiv {
-  width: 90vw;
+  width: 80vw;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
 }
 .petsDiv .pName,
 .secondOwnerDiv .pName {
@@ -192,19 +194,16 @@ input {
 .secondOwnerDiv p {
   font-size: 12px;
   margin: 0px;
-  width: 180px;
+  width: 140px;
 }
 
 @media screen and (min-width: 768px) {
   .petsDiv .pName,
 .secondOwnerDiv .pName {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
   }
   .petsDiv p,
 .secondOwnerDiv p {
-    font-size: 18px;
-    margin: 0px;
-    width: 180px;
+    font-size: 15px;
   }
 }/*# sourceMappingURL=showpet.css.map */
