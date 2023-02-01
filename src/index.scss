@@ -15,28 +15,28 @@ $myWhite: #fff;
 h1 {
   font-family: "Noto Serif", serif;
   font-weight: 400;
-  font-size: 52px;
+  font-size: 64px;
 }
 
 h2 {
   font-weight: 400;
-  font-size: 42px;
+  font-size: 48px;
 }
 
 h3 {
   font-family: "Noto Serif", serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 40px;
 }
 
 h4 {
   font-weight: 400;
-  font-size: 32px;
+  font-size: 36px;
 }
 
 h5 {
   font-weight: 400;
-  font-size: 28px;
+  font-size: 32px;
 }
 
 h6,
@@ -176,6 +176,8 @@ input {
   // Heading Mobile
 
   h1 {
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
     font-size: 24px;
   }
 
