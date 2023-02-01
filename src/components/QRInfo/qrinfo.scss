@@ -1,34 +1,55 @@
 .QRInfo {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100vw;
-
-  .OwnerQRInfo,
-  .SecOwnQRInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30vw;
-  }
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .PetQRInfo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 30vw;
-
-    h5 {
-      margin: 10px;
-    }
-
+    width: 70vw;
     .PetQRShortInfo {
       display: flex;
-      flex-direction: row;
-      width: 30vw;
-
+      justify-content: center;
       p {
-        margin: 15px;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .OwnerQRInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    .OwnerQRShortInfo {
+      display: flex;
+      align-items: center;
+      h5 {
+        font-weight: 700;
+      }
+      p {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .SecOwnQRInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+
+    .SecOwnQRShortInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0px;
+      h5 {
+        font-weight: 700;
+      }
+      p {
+        margin: 0px;
       }
     }
   }

@@ -45,11 +45,22 @@ export function QRInfo() {
     <>
       <h3>Kontaktuppgifter:</h3>
       <div className="QRInfo">
+        <div className="OwnerQRInfo">
+          <h3>{user?.firstname}</h3>
+          <div className="OwnerQRShortInfo">
+            <h5>Telefon:</h5>
+            <p>+46 {user?.phone}</p>
+            <h5>Adress:</h5>
+            <p>
+              {user?.address}, {user?.zip} {user?.city}
+            </p>
+          </div>
+        </div>
         <div className="PetQRInfo">
           {allpets.map((pet) => {
             return (
               <>
-                <h5>{pet.name}</h5>
+                <h3>{pet.name}</h3>
                 <div className="PetQRShortInfo">
                   <p>{pet.breed}</p>
                   <p>{pet.color}</p>
@@ -59,28 +70,23 @@ export function QRInfo() {
             );
           })}
         </div>
-        <div className="OwnerQRInfo">
-          <h5>Ägare:</h5>
-          <h3>{user?.firstname}</h3>
-          <p>Telefon: +46 {user?.phone}</p>
-          <p>
-            Adress: {user?.address}, {user?.zip} {user?.city}
-          </p>
-        </div>
         <div className="SecOwnQRInfo">
-          <h5>Andra ägare:</h5>
-          {allSecondOwners.map((secondOwner) => {
-            return (
-              <>
-                <p>{secondOwner.firstname}</p>
-                <p>Telefon: +46 {secondOwner.phone}</p>
-                <p>
-                  Adress: {secondOwner.address}, {secondOwner.zip}{" "}
-                  {secondOwner.city}
-                </p>
-              </>
-            );
-          })}
+          <h2>Andra ägare:</h2>
+          <div className="SecOwnQRShortInfo">
+            {allSecondOwners.map((secondOwner) => {
+              return (
+                <>
+                  <h3>{secondOwner.firstname}</h3>
+                  <h5>Telefon:</h5>
+                  <p>+46 {secondOwner.phone}</p>
+                  <h5>Adress:</h5>
+                  <p>
+                    {secondOwner.address}, {secondOwner.zip} {secondOwner.city}
+                  </p>
+                </>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
