@@ -1,4 +1,5 @@
 import axios from "axios";
+import { log } from "console";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ISecOwn } from "../models/ISecOwn";
