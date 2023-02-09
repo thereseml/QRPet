@@ -1,23 +1,22 @@
 import axios from "axios";
-import { log } from "console";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ISecOwn } from "../models/ISecOwn";
 import { ShowSecondOwner } from "../ShowPetAndOwner/showSecondOwner";
 
 export function GetSecOwn() {
-  // hämta id från url
-  const userId = useParams();
-  let ID = userId.id;
-
   // spara alla secondOwners
   const [allSecondOwners, setAllSecondOwners] = useState<ISecOwn[]>([]);
 
-  // api key
-  const url = process.env.REACT_APP_API;
+  // hämta id från url
+  const userId = useParams();
+  const ID = userId.id;
 
   // hämta registrerade andra ägare
   useEffect(() => {
+    // api key
+    const url = process.env.REACT_APP_API;
+
     axios.get<ISecOwn[]>(`${url}secondOwner/owner/${ID}`).then((res) => {
       setAllSecondOwners(res.data);
     });

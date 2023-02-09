@@ -11,9 +11,6 @@ export function QRInfo() {
   const userId = useParams();
   let ID = userId.id;
 
-  // api key
-  const url = process.env.REACT_APP_API;
-
   // spara hämtade kontaktuppgifter ägaren
   const [user, setUser] = useState<INewUser>();
 
@@ -24,6 +21,9 @@ export function QRInfo() {
   const [allpets, setAllPets] = useState<IPetsId[]>([]);
 
   useEffect(() => {
+    // api key
+    const url = process.env.REACT_APP_API;
+
     axios.get(`${url}users/${ID}`).then((res) => {
       console.log(res);
       setUser(res.data);

@@ -19,10 +19,9 @@ export function LoggedInUser() {
   const [showEditUser, setShowEditUser] = useState(false);
   const [showDeleteUser, setShowDeleteUser] = useState(false);
 
-  // api key
-  const url = process.env.REACT_APP_API;
-
   useEffect(() => {
+    // api key
+    const url = process.env.REACT_APP_API;
     // hämtar användare function
     const getLocal = localStorage.getItem("OwnerID");
     const LocalUser = JSON.parse(getLocal!);

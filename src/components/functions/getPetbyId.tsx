@@ -7,15 +7,15 @@ import { ShowPet } from "../ShowPetAndOwner/showpet";
 export function GetPetById() {
   // hämta id från url
   const userId = useParams();
-  let ID = userId.id;
+  const ID = userId.id;
 
   // state för alla djuren som hämtas/registreras
   const [allpets, setAllPets] = useState<IPetsId[]>([]);
 
-  // api key
-  let url = process.env.REACT_APP_API;
-
   useEffect(() => {
+    // api key
+    const url = process.env.REACT_APP_API;
+
     // hämtar djur function
     axios.get<IPetsId[]>(`${url}pets/owner/${ID}`).then((res) => {
       setAllPets([...res.data]);
